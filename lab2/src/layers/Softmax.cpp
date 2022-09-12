@@ -5,10 +5,7 @@
 #include "Layer.h"
 #include "Softmax.h"
 #include <algorithm>
-<<<<<<< HEAD
 #include <math.h>
-=======
->>>>>>> 236e96b6ce27fe0965d388c08138bf3f8786a945
 
 
 namespace ML {
@@ -21,7 +18,6 @@ namespace ML {
         Array1D_fp32 outputData = getOutputData().getData<Array1D_fp32>();
         int X = getInputParams().dims[0];
         // printf("%d\n\r", I);
-<<<<<<< HEAD
 
         fp32 sum;
         for(int i = 0; i < X; ++i) {
@@ -34,13 +30,6 @@ namespace ML {
             // printf("%lf\n\r", outputData[i]);
         }
 
-=======
-        for(int i = 0; i < X; ++i) {
-
-        }
-
-        
->>>>>>> 236e96b6ce27fe0965d388c08138bf3f8786a945
         printf("Softmax Finished\n\r");
     }
 

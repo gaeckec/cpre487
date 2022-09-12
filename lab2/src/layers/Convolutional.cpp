@@ -31,27 +31,16 @@ namespace ML {
 
         //Probably have a variable assicated with this        
         int batch_size = 1;
-<<<<<<< HEAD
         int stide_size = 1;
 
         output_height = ((input_height - filter_height + stide_size) / stide_size);
         output_width = ((input_width - filter_width + stide_size) / stide_size);
-=======
-        int step_size = 1;
-
-        output_height = ((input_height - filter_height + step_size) / step_size);
-        output_width = ((input_width - filter_width + step_size) / step_size);
->>>>>>> 236e96b6ce27fe0965d388c08138bf3f8786a945
 
         //check
         if(debug){
             std::cout << "Input Height = " << input_height << ", Input Width = " << input_width << ", num_input_channels " << num_input_channels << "\n"
                     << "Filter Height = " << filter_height << ", Filter Width = " << filter_width << ", num_filter_channels " << num_filter_channels << "\n"
-<<<<<<< HEAD
                     << "Output Height = " << output_height << ", Output Width = " << output_width << ", num_output_channels " << num_filter_channels << "\n"
-=======
-                    << "Output Height = " << output_height << ", Output Width = " << output_width << ", num_output_channels " << num_input_channels << "\n"
->>>>>>> 236e96b6ce27fe0965d388c08138bf3f8786a945
                     << "\n\n";
         }
 
@@ -81,38 +70,25 @@ namespace ML {
                             for(r = 0; r < filter_height; r++){
                                 for(s = 0; s < filter_width; s++){
                                     
-<<<<<<< HEAD
                                     input_x = stide_size * q + s;
                                     input_y = stide_size * p + r;
 
                                     convOutputData[q][p][m] += convInputData[input_x][input_y][c] * convWeightData[s][r][c][m];
-=======
-                                    input_x = step_size * q + s;
-                                    input_y = step_size * p + r;
-
-                                    convOutputData[q][p][m] = convInputData[input_x][input_y][c] * convWeightData[s][r][c][m];
->>>>>>> 236e96b6ce27fe0965d388c08138bf3f8786a945
                                 }
                             }
                         } 
                         convOutputData[q][p][m] += convBiasData[m];
-<<<<<<< HEAD
 
                         if(convOutputData[q][p][m] < 0){
                             convOutputData[q][p][m] = 0.0f;
                         }
                         // convOutputData[q][p][m] += convBiasData[m];
-=======
->>>>>>> 236e96b6ce27fe0965d388c08138bf3f8786a945
                     }
                 } 
             }
         }
-<<<<<<< HEAD
 
         // printf("\nDim 0 = %d, Dim 1 = %d, Dim 2 = %d\n", output_height, output_width, num_filter_channels);
-=======
->>>>>>> 236e96b6ce27fe0965d388c08138bf3f8786a945
         printf("Convolution Finished\n\r");
     }
 
