@@ -81,7 +81,8 @@ namespace ML {
                 CONVOLUTIONAL,
                 DENSE,
                 SOFTMAX,
-                MAX_POOLING
+                MAX_POOLING,
+                FLATTEN
             };
         
         public:

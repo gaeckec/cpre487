@@ -7,31 +7,29 @@
 namespace ML {
     class SoftMaxLayer : public Layer {
         public:
-        SoftMaxLayer(const LayerParams inParams, const LayerParams outParams,
-                               const LayerParams weightParams, const LayerParams biasParams)
-                : Layer(inParams, outParams, LayerType::SOFTMAX), weightParam(weightParams), weightData(weightParams),
-                  biasParam(biasParams), biasData(biasParams) {}
+            SoftMaxLayer(const LayerParams inParams, const LayerParams outParams)
+                : Layer(inParams, outParams, LayerType::MAX_POOLING) {}
 
-        // Getters
-            const LayerParams& getWeightParams() const { return weightParam; }
-            const LayerParams& getBiasParams() const { return biasParam; }
-            const LayerData& getWeightData() const { return weightData; }
-            const LayerData& getBiasData() const { return biasData; }
+            // Getters
+            // const LayerParams& getWeightParams() const { return weightParam; }
+            // const LayerParams& getBiasParams() const { return biasParam; }
+            // const LayerData& getWeightData() const { return weightData; }
+            // const LayerData& getBiasData() const { return biasData; }
 
             // Allocate all resources needed for the layer & Load all of the required data for the layer
             template<typename T>
             void allocateLayer() {
                 Layer::allocateOutputBuffer<Array3D<T>>();
-                weightData.loadData<Array4D<T>>();
-                biasData.loadData<Array1D<T>>();
+                // weightData.loadData<Array4D<T>>();
+                // biasData.loadData<Array1D<T>>();
             }
 
-            // Fre all resources allocated for the layer
+            // Free all resources allocated for the layer
             template<typename T>
             void freeLayer() {
                 Layer::freeOutputBuffer<Array3D<T>>();
-                weightData.freeData<Array4D<T>>();
-                biasData.freeData<Array1D<T>>();
+                // weightData.freeData<Array4D<T>>();
+                // biasData.freeData<Array1D<T>>();
             }
 
             // Virtual functions
@@ -41,10 +39,11 @@ namespace ML {
             virtual void computeSIMD(const LayerData &dataIn) const override;
 
         private:
-            LayerParams weightParam;
-            LayerData weightData;
+            // LayerParams weightParam;
+            // LayerData weightData;
 
-            LayerParams biasParam;
-            LayerData biasData;
+            // LayerParams biasParam;
+            // LayerData biasData;
     };
+
 }

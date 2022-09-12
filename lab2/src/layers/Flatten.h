@@ -5,10 +5,10 @@
 #include "../Types.h"
 
 namespace ML {
-    class MaxPoolingLayer : public Layer {
+    class FlattenLayer : public Layer {
         public:
-            MaxPoolingLayer(const LayerParams inParams, const LayerParams outParams)
-                : Layer(inParams, outParams, LayerType::MAX_POOLING) {}
+            FlattenLayer(const LayerParams inParams, const LayerParams outParams)
+                : Layer(inParams, outParams, LayerType::FLATTEN) {}
 
             // Getters
             // const LayerParams& getWeightParams() const { return weightParam; }
