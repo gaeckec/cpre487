@@ -5,6 +5,7 @@
 #include "layers/Dense.h"
 #include "layers/MaxPooling.h"
 #include "layers/Softmax.h"
+#include "layers/Flatten.h"
 
 namespace ML {
     class Model {
@@ -46,14 +47,17 @@ namespace ML {
                     ((ConvolutionalLayer*) layers[i])->allocateLayer<T>();
                     break;
                 case Layer::LayerType::DENSE:
-                //     ((DenseLayer*) layers[i])->allocateLayer<T>();
-                //     break;
+                    ((DenseLayer*) layers[i])->allocateLayer<T>();
+                    break;
                 case Layer::LayerType::SOFTMAX:
-                //     ((SoftmaxLayer*) layers[i])->allocateLayer<T>();
-                //     break;
+                    ((SoftMaxLayer*) layers[i])->allocateLayer<T>();
+                    break;
                 case Layer::LayerType::MAX_POOLING:
-                //     ((MaxPoolingLayer*) layers[i])->allocateLayer<T>();
-                //     break;
+                    ((MaxPoolingLayer*) layers[i])->allocateLayer<T>();
+                    break;
+                case Layer::LayerType::FLATTEN:
+                    ((FlattenLayer*) layers[i])->allocateLayer<T>();
+                    break;
                 case Layer::LayerType::NONE:
                     [[fallthrough]];
                 default:
