@@ -67,7 +67,6 @@ Model buildToyModel(const fs::path modelPath) {
     ConvolutionalLayer* conv3 = new ConvolutionalLayer(conv3_inDataParam, conv3_outDataParam, conv3_weightParam, conv3_biasParam);
     model.addLayer(conv3);
 
-
     // --- Conv 4: L4 ---
     // Input shape: 26x26x64
     // Output shape: 24x24x64
@@ -78,7 +77,6 @@ Model buildToyModel(const fs::path modelPath) {
 
     ConvolutionalLayer* conv4 = new ConvolutionalLayer(conv4_inDataParam, conv4_outDataParam, conv4_weightParam, conv4_biasParam);
     model.addLayer(conv4);
-
 
     // --- MPL 1: L5---
     // Input shape: 24x24x64
@@ -100,7 +98,6 @@ Model buildToyModel(const fs::path modelPath) {
     ConvolutionalLayer* conv5 = new ConvolutionalLayer(conv5_inDataParam, conv5_outDataParam, conv5_weightParam, conv5_biasParam);
     model.addLayer(conv5);
 
-
     // --- Conv 6: L7 ---
     // Input shape: 10x10x64
     // Output shape: 8x8x128
@@ -111,7 +108,6 @@ Model buildToyModel(const fs::path modelPath) {
 
     ConvolutionalLayer* conv6 = new ConvolutionalLayer(conv6_inDataParam, conv6_outDataParam, conv6_weightParam, conv6_biasParam);
     model.addLayer(conv6);
-
 
     // --- MPL 2: L8 ---
     // Input shape: 8x8x128
@@ -141,7 +137,6 @@ Model buildToyModel(const fs::path modelPath) {
 
     DenseLayer* dense1 = new DenseLayer(dense1_inDataParam, dense1_outDataParam, dense1_weightParam, dense1_biasParam);
     model.addLayer(dense1);
-
 
     // --- Dense 1: L11 ---
     // Input shape: 256
@@ -225,7 +220,7 @@ int main(int argc, char **argv) {
     dimVec dims = {64, 64, 3};
     
     // Construct a LayerData object from a LayerParams one
-    LayerData img( {sizeof(fp32), dims, basePath / "image_0.bin"} );
+    LayerData img( {sizeof(fp32), dims, basePath / "image_1.bin"} );
     img.loadData<Array3D_fp32>();
 
     // Run infrence on the model
@@ -235,22 +230,13 @@ int main(int argc, char **argv) {
     std::cout << "\n--- Comparing The Output ---" << std::endl;
 
     // Construct a LayerData object from a LayerParams one
-    LayerData expected( { sizeof(fp32), {200}, basePath / "image_0_data" / "layer_11_output.bin" } );
+    LayerData expected( { sizeof(fp32), {2048}, basePath / "image_1_data" / "layer_9_output.bin" } );
     expected.loadData<Array3D_fp32>();
 
-    // for(int i = 0; i < 5; ++i) {
-    //     for(int j = 0; j < 5; ++j) {
-    //         for(int k = 0; k < 5; ++k) {
-    //             printf("We have %0.6lf and they have %0.6lf\n\r", output.getData<Array3D_fp32>()[i][j][k], expected.getData<Array3D_fp32>()[i][j][k]);
-    //         }
-    //     }
-    // }
-
-    std::cout << "Comparing expected output to model output (max error / T/F within epsilon " << EPSILON << "): \n\t"
-              << expected.compare<Array3D<fp32>>(output) << " / "
-              << std::boolalpha << bool(expected.compareWithin<Array3D<fp32>>(output, EPSILON))
-              << std::endl;
-
+    // std::cout << "Comparing expected output to model output (max error / T/F within epsilon " << EPSILON << "): \n\t"
+    //           << expected.compare<Array3D<fp32>>(output) << " / "
+    //           << std::boolalpha << bool(expected.compareWithin<Array3D<fp32>>(output, EPSILON))
+    //           << std::endl;
 
     // Clean up
     model.freeLayers<fp32>();

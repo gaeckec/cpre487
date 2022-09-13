@@ -15,16 +15,16 @@ namespace ML {
         // TODO: Your Code Here...
         Array3D_fp32 inputData = dataIn.getData<Array3D_fp32>();
 
-        int X = getInputParams().dims[0];
-        int Y = getInputParams().dims[1];
-        int Z  = getInputParams().dims[2];
+        int DEPTH = getInputParams().dims[0];
+        int HEIGHT = getInputParams().dims[1];
+        int WIDTH  = getInputParams().dims[2];
 
         Array1D_fp32 outputData = getOutputData().getData<Array1D_fp32>();
 
-        for(int i = 0; i < X; ++i) {
-            for(int j = 0; j < Y; ++j) {
-                for(int k = 0; k < Z; ++k) {
-                    int idx = (Z*Y*i) + (Z*j) + k;
+        for(int i = 0; i < DEPTH; ++i) {
+            for(int j = 0; j < HEIGHT; ++j) {
+                for(int k = 0; k < WIDTH; ++k) {
+                    int idx = (WIDTH*HEIGHT*i) + (WIDTH*j) + k;
                     // printf("%d\n\r", idx);
                     outputData[idx] = inputData[i][j][k];
                 }
