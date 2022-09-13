@@ -26,10 +26,10 @@ namespace ML {
         LayerData Output_data = getOutputData();
 
         //Map values to memory
-        Array2D_fp32 convWeightData = Weight_data.getData<Array2D_fp32>();
-        Array1D_fp32 convBiasData = Bias_data.getData<Array1D_fp32>();
-        Array1D_fp32 convInputData = dataIn.getData<Array1D_fp32>();
-        Array1D_fp32 convOutputData = Output_data.getData<Array1D_fp32>();
+        Array2D_fp32 denseWeightData = Weight_data.getData<Array2D_fp32>();
+        Array1D_fp32 denseBiasData = Bias_data.getData<Array1D_fp32>();
+        Array1D_fp32 denseInputData = dataIn.getData<Array1D_fp32>();
+        Array1D_fp32 denseOutputData = Output_data.getData<Array1D_fp32>();
 
         //predeclair variables
         int n,m,h;
@@ -38,9 +38,11 @@ namespace ML {
         for(n = 0; n < batch_size; n++){
             for(m = 0; m < num_input_channels; m++){
                 for(h = 0; h < input_height; h++){                                    
-                    convOutputData[m] = convInputData[h] *convWeightData[h][m];                                
+                    denseOutputData[m] += denseInputData[h] * denseWeightData[h][m];                                
                 }
-                convOutputData[m] += convBiasData[m];
+                denseOutputData[m] += denseBiasData[m];
+
+                if(denseOutputData[m] < 0) { denseOutputData[m] = 0.0; }
             } 
         }
         printf("Dense Finished\n\r");
