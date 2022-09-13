@@ -24,7 +24,9 @@ namespace ML {
         for(int i = 0; i < X; ++i) {
             for(int j = 0; j < Y; ++j) {
                 for(int k = 0; k < Z; ++k) {
-                    outputData[(X*Y*i) + (Y*j) + k] = inputData[i][j][k];
+                    int idx = (Z*Y*i) + (Z*j) + k;
+                    // printf("%d\n\r", idx);
+                    outputData[idx] = inputData[i][j][k];
                 }
             }
         }
