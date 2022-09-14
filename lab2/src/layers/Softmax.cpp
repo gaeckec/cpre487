@@ -21,7 +21,7 @@ namespace ML {
 
         fp32 sum;
         for(int i = 0; i < X; ++i) {
-            sum += inputData[i];
+            sum += exp(inputData[i]);
             // printf("%lf\n\r", sum);
         }
 
