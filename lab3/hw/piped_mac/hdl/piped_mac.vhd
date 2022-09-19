@@ -70,7 +70,7 @@ begin
 	
 	
 	-- Debug Signals
-    mac_debug <= x"00000000";  -- Double checking sanity
+   mac_debug <= x"00000000";  -- Double checking sanity
    
    process (ACLK) is
    begin 
