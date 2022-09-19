@@ -55,7 +55,7 @@ architecture behavioral of piped_mac is
 	
 	
 	-- Mac stages
-    type PIPE_STAGES is (TEMP_STAGE0);
+    type PIPE_STAGES is (STAGE_0);
 
 	
 	-- Debug signals, make sure we aren't going crazy
@@ -82,7 +82,7 @@ begin
       else
         for i in PIPE_STAGES'left to PIPE_STAGES'right loop
             case i is  -- Stages
-                when TEMP_STAGE0 =>
+                when STAGE_0 =>
 					-- Template pipline stage 0         
             end case;  -- Stages
 		end loop;  -- Stages
