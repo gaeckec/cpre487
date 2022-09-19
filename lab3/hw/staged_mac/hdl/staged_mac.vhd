@@ -52,11 +52,23 @@ end staged_mac;
 
 architecture behavioral of staged_mac is
     -- Internal Signals
-	
+    constant INTEGER_BITS         : integer := C_DATA_WIDTH/2;
+    constant FIXED_BITS           : integer := C_DATA_WIDTH/2;
+    subtype fixed_t is signed(INTEGER_BITS+FIXED_BITS-1 downto 0);
+    constant fixed_t_zero : fixed_t := (others => '0');    
+--    constant fixed_t_one  : fixed_t  := x"00010000";
+    
+    
+    signal input_one, input_two, mult_bits : fixed_t;
+    signal sum_bits     : fixed_t := fixed_t_zero;
+    
+    signal t_last, t_last_MV : std_logic;
 	
 	-- Mac state
-    type STATE_TYPE is (WAIT_FOR_VALUES);
+    type STATE_TYPE is (WAIT_FOR_VALUES, MULT_VALUE, ADD_VALUES, OUTPUT_DATA);
     signal state : STATE_TYPE;
+    
+    
 	
 	-- Debug signals, make sure we aren't going crazy
     signal mac_debug : std_logic_vector(31 downto 0);
@@ -79,15 +91,46 @@ begin
       -- Reset values if reset is low
       if ARESETN = '0' then  -- Reset
         state       <= WAIT_FOR_VALUES;
+        sum_bits    <= fixed_t_zero;
 
       else
         case state is  -- State
             -- Wait here until we receive values
             when WAIT_FOR_VALUES =>
                 -- Wait here until we recieve valid values
+			    SD_AXIS_TREADY <= '1';
+			    if SD_AXIS_TVALID = '1' then
+			        input_one <= signed(SD_AXIS_TDATA(C_DATA_WIDTH-1 downto 0));
+			        input_two <= signed(SD_AXIS_TDATA(2*C_DATA_WIDTH-1 downto C_DATA_WIDTH));
+			        SD_AXIS_TREADY <= '0';
+			        t_last <= SD_AXIS_TLAST;
+			        state <= MULT_VALUE;
+			    end if;
 			
+			when MULT_VALUE => 
+			    mult_bits <= input_one * input_two;
+			    t_last_MV <= t_last;
+			    state <= ADD_VALUES;
+			    
 			
-			-- Other stages go here	
+			when ADD_VALUES => 
+			    sum_bits <= sum_bits + mult_bits;
+			    
+			    if t_last_MV = '1' then
+			        state <= OUTPUT_DATA;
+			    else
+			        state <= WAIT_FOR_VALUES;
+			    end if;
+			    
+			when OUTPUT_DATA =>     
+			    MO_AXIS_TVALID <= '1';
+			    MO_AXIS_TDATA <= std_logic_vector(sum_bits);
+			    if MO_AXIS_TREADY = '1' then
+			        MO_AXIS_TVALID <= '0';
+			        sum_bits <= fixed_t_zero;
+			        state <= WAIT_FOR_VALUES;
+			    end if;
+			
 			
             when others =>
                 state <= WAIT_FOR_VALUES;

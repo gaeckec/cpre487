@@ -52,7 +52,7 @@ end piped_mac;
 
 architecture behavioral of piped_mac is
     -- Internal Signals
-	
+
 	
 	-- Mac stages
     type PIPE_STAGES is (STAGE_0);
