@@ -52,10 +52,28 @@ end piped_mac;
 
 architecture behavioral of piped_mac is
     -- Internal Signals
-
+    constant INTEGER_BITS : integer := C_DATA_WIDTH/2;
+    constant FIXED_BITS   : integer := C_DATA_WIDTH/2;
+    
+    subtype fixed_t is signed(INTEGER_BITS+FIXED_BITS-1 downto 0);
+    subtype fixed_t_wide is signed((INTEGER_BITS+FIXED_BITS)*2-1 downto 0);
+    subtype fixed_t_wide_check is signed((INTEGER_BITS+FIXED_BITS)*2 downto 0);
+    
+    constant fixed_t_zero : fixed_t := (others => '0');
+    constant fixed_t_wide_zero : fixed_t_wide := (others => '0');
+    
+--    signal input_0       : fixed_t := fixed_t_zero;
+--    signal input_1       : fixed_t := fixed_t_zero;
+    signal mult_bits     : fixed_t_wide := fixed_t_wide_zero;
+    signal sum_bits      : fixed_t_wide_check := (others => '0');
+    
+    signal t_last_0, t_last_1  : std_logic;
+    signal data_ready : std_logic;
+	signal input_ready : std_logic;
+	
 	
 	-- Mac stages
-    type PIPE_STAGES is (STAGE_0);
+    type PIPE_STAGES is (WAIT_FOR_VALUES, MULT, ADD, OUTPUT_VALUES);
 
 	
 	-- Debug signals, make sure we aren't going crazy
@@ -65,12 +83,12 @@ begin
 
     -- Interface signals
 
-
-    -- Internal signals
-	
+    -- Internal signal
+	data_ready <= not(t_last_0) and not(t_last_1) and SD_AXIS_TVALID;
+    SD_AXIS_TREADY <= not(t_last_0 or t_last_1);
 	
 	-- Debug Signals
-   mac_debug <= x"00000000";  -- Double checking sanity
+   mac_debug <= x"00000002";  -- Double checking sanity
    
    process (ACLK) is
    begin 
@@ -78,12 +96,57 @@ begin
 
       -- Reset values if reset is low
       if ARESETN = '0' then  -- Reset
+        mult_bits <= (others => '0');
+        sum_bits  <= (others => '0');
+        
+        t_last_0 <= '0';
+        t_last_1 <= '0';
 		
       else
         for i in PIPE_STAGES'left to PIPE_STAGES'right loop
             case i is  -- Stages
-                when STAGE_0 =>
-					-- Template pipline stage 0         
+                when WAIT_FOR_VALUES =>
+--                    SD_AXIS_TREADY <= input_ready;
+                    if data_ready = '1' then
+                        mult_bits <= signed(SD_AXIS_TDATA(C_DATA_WIDTH-1 downto 0)) * signed(SD_AXIS_TDATA(C_DATA_WIDTH*2-1 downto C_DATA_WIDTH));
+                        t_last_0  <= SD_AXIS_TLAST;
+                    
+                    end if;
+                    
+                when ADD =>
+                    if t_last_1 = '0' then
+                        sum_bits <= sum_bits + mult_bits;
+                        t_last_1 <= t_last_0;
+                                            
+                    end if;
+                                                        
+                when OUTPUT_VALUES =>
+                    if t_last_1 = '1' then
+                        MO_AXIS_TVALID <= '1';
+--                        t_last_0 <= '0';
+                        t_last_1 <= '0';
+                        
+                        if(sum_bits(2*C_DATA_WIDTH downto INTEGER_BITS+FIXED_BITS+FIXED_BITS) > 0) then
+                            MO_AXIS_TDATA(C_DATA_WIDTH-1) <= '0';
+                            MO_AXIS_TDATA(C_DATA_WIDTH-2 downto 0) <= (others => '1');
+                            
+                        elsif(sum_bits(2*C_DATA_WIDTH downto INTEGER_BITS+FIXED_BITS+FIXED_BITS) < -1) then
+                            MO_AXIS_TDATA(C_DATA_WIDTH-1) <= '1';
+                            MO_AXIS_TDATA(C_DATA_WIDTH-2 downto 0) <= (others => '0');
+                            
+                        else 
+                            MO_AXIS_TDATA <= std_logic_vector(sum_bits(INTEGER_BITS+FIXED_BITS+FIXED_BITS-1 downto FIXED_BITS));
+                        
+                        end if;
+                        
+                        if MO_AXIS_TREADY = '1' then
+                            MO_AXIS_TDATA <= std_logic_vector(sum_bits(C_DATA_WIDTH-1 downto 0));
+                            MO_AXIS_TVALID <= '0';
+                            MO_AXIS_TLAST <= t_last_1;
+                            
+                        end if;
+                    end if;
+                
             end case;  -- Stages
 		end loop;  -- Stages
       end if;  -- Reset

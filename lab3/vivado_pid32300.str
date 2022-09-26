@@ -192,3 +192,645 @@ selectCodeEditor("piped_mac.vhd", 128, 430, false, false, false, false, true); /
 selectCodeEditor("piped_mac.vhd", 199, 311); // bP (w, cs)
 // Elapsed time: 13 seconds
 selectCodeEditor("piped_mac.vhd", 112, 421); // bP (w, cs)
+// Elapsed time: 415 seconds
+selectCodeEditor("piped_mac.vhd", 390, 533); // bP (w, cs)
+// Elapsed time: 120 seconds
+selectCodeEditor("piped_mac.vhd", 407, 251); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // aa (q, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 5,786 MB. GUI used memory: 78 MB. Current time: 9/19/22, 4:23:40 PM CDT
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // af (cs)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // af (cs)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // af (cs)
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // af (cs)
+selectMenuItem(PAResourceCommand.PACommandNames_CLOSE_PROJECT, "Close Project"); // ai (cs)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // aa (q, cs)
+// Run Command: PAResourceCommand.PACommandNames_CLOSE_PROJECT
+// A (cs): Close Project: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (A)
+// bz (cs):  Close Project : addNotify
+dismissDialog("Close Project"); // A (cs)
+// TclEventType: PROJECT_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,725 MB. GUI used memory: 77 MB. Current time: 9/19/22, 4:23:44 PM CDT
+// Tcl Message: close_project 
+dismissDialog("Close Project"); // bz (cs)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "ls", true); // aF (ac, cs)
+// Tcl Command: 'ls'
+// Tcl Command: 'ls'
+// Tcl Message: ls 
+// Tcl Message: tc_piped_mac tc_piped_mac_ip.tcl Xilinx 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "cd ..", true); // aF (ac, cs)
+// Tcl Command: 'cd ..'
+// Tcl Command: 'cd ..'
+// Tcl Message: cd .. 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "cd ..", true); // aF (ac, cs)
+// Tcl Command: 'cd ..'
+// Tcl Command: 'cd ..'
+// Tcl Message: cd .. 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "cd ..", true); // aF (ac, cs)
+// Tcl Command: 'cd ..'
+// Tcl Command: 'cd ..'
+// Tcl Message: cd .. 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "ls", true); // aF (ac, cs)
+// Tcl Command: 'ls'
+// Tcl Command: 'ls'
+// Tcl Message: ls 
+// Tcl Message: env.sh hw vivado_31578.backup.jou vivado_31578.backup.log vivado.jou vivado.log vivado_pid32300.str Xilinx 
+// Tcl Command: 'rdi::info_commands bd::match_path'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "cd hw/", true); // aF (ac, cs)
+// Tcl Command: 'rdi::info_commands bd::match_path'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "cd hw/staged_mac/", true); // aF (ac, cs)
+// Tcl Command: 'rdi::info_commands bd::match_path'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "cd hw/staged_mac/vivado/", true); // aF (ac, cs)
+applyEnter(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "cd hw/staged_mac/vivado/tc_staged_mac_ip.tcl"); // aF (ac, cs)
+// Tcl Command: 'cd hw/staged_mac/vivado/tc_staged_mac_ip.tcl'
+// Tcl Command: 'cd hw/staged_mac/vivado/tc_staged_mac_ip.tcl'
+// Tcl Message: cd hw/staged_mac/vivado/tc_staged_mac_ip.tcl 
+// Tcl Message: couldn't change working directory to "hw/staged_mac/vivado/tc_staged_mac_ip.tcl": not a directory 
+// Tcl Command: 'rdi::info_commands bd::match_path'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "cd hw/staged_mac/vivado/", true); // aF (ac, cs)
+// Tcl Command: 'cd hw/staged_mac/vivado/'
+// Tcl Command: 'cd hw/staged_mac/vivado/'
+// Tcl Message: cd hw/staged_mac/vivado/ 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "ls", true); // aF (ac, cs)
+// Tcl Command: 'ls'
+// Tcl Command: 'ls'
+// Tcl Message: ls 
+// Tcl Message: tc_staged_mac_ip.tcl 
+// Tcl Command: 'rdi::info_commands {sou*}'
+// Elapsed time: 11 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source tc_staged_mac_ip.tcl", true); // aF (ac, cs)
+// Tcl Command: 'source tc_staged_mac_ip.tcl'
+// Tcl Command: 'source tc_staged_mac_ip.tcl'
+// bz (cs):  Tcl Command Line : addNotify
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: source tc_staged_mac_ip.tcl 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/remote/Xilinx/2020.1/Vivado/2020.1/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: BOARD_MODIFIED
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: RUN_MODIFY
+// TclEventType: PROJECT_DASHBOARD_CHANGE
+// Tcl Message: # set proj_dir [get_property directory [current_project]] # set obj [current_project] # set_property -name "board_part" -value "em.avnet.com:zed:part0:1.4" -objects $obj # set_property -name "board_part_repo_paths" -value "[file normalize "$origin_dir/../../../../cpre480/MP-1/hw/board"]" -objects $obj 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/gaeckec/cpre487/lab3/hw/staged_mac'. 
+// Tcl Message: INFO: Project created:tc_staged_mac 
+dismissDialog("Tcl Command Line"); // bz (cs)
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, staged_mac(behavioral) (staged_mac.vhd)]", 1, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, staged_mac(behavioral) (staged_mac.vhd)]", 1, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectCodeEditor("staged_mac.vhd", 264, 339); // bP (w, cs)
+selectCodeEditor("staged_mac.vhd", 401, 481); // bP (w, cs)
+typeControlKey((HResource) null, "staged_mac.vhd", 'v'); // bP (w, cs)
+selectCodeEditor("staged_mac.vhd", 438, 415); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // aa (q, cs)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // af (cs)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_PROJECT, "Open Recent"); // af (cs)
+selectMenuItem(PAResourceItoN.MainMenuMgr_OPEN_RECENT_PROJECT, "/home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.xpr"); // ai (cs)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // aa (q, cs)
+// bz (cs):  Open Project : addNotify
+// Opening Vivado Project: /home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.xpr. Version: Vivado v2020.1 
+selectButton("OptionPane.button", "No"); // JButton (v, B)
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// WARNING: HEventQueue.dispatchEvent() is taking  1122 ms.
+// Tcl Message: open_project /home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/gaeckec/cpre487/lab3/hw/piped_mac'. 
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/remote/Xilinx/2020.1/Vivado/2020.1/data/ip'. 
+// Project name: tc_piped_mac; location: /home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac; part: xc7z020clg484-1
+// [GUI Memory]: 148 MB (+6758kb) [00:18:01]
+dismissDialog("Open Project"); // bz (cs)
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 59 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, piped_mac(behavioral) (piped_mac.vhd)]", 1, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, piped_mac(behavioral) (piped_mac.vhd)]", 1, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectCodeEditor("piped_mac.vhd", 400, 475); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 340, 475); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 340, 475, false, false, false, false, true); // bP (w, cs) - Double Click
+// Elapsed time: 88 seconds
+selectCodeEditor("piped_mac.vhd", 187, 409); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 93 seconds
+selectCodeEditor("piped_mac.vhd", 460, 456); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 41, 486); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,812 MB. GUI used memory: 90 MB. Current time: 9/19/22, 4:30:10 PM CDT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 93 seconds
+selectCodeEditor("piped_mac.vhd", 251, 556); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 314, 555); // bP (w, cs)
+// Elapsed time: 11 seconds
+selectCodeEditor("piped_mac.vhd", 343, 487); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 17 seconds
+selectCodeEditor("piped_mac.vhd", 266, 555); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 450, 534); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("piped_mac.vhd", 187, 556); // bP (w, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 5,865 MB. GUI used memory: 90 MB. Current time: 9/19/22, 4:31:05 PM CDT
+selectCodeEditor("piped_mac.vhd", 372, 535); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 12 seconds
+selectCodeEditor("piped_mac.vhd", 432, 559); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 496, 529); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 23 seconds
+selectCodeEditor("piped_mac.vhd", 395, 587); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 157, 442); // bP (w, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 5,897 MB. GUI used memory: 90 MB. Current time: 9/19/22, 4:31:50 PM CDT
+selectCodeEditor("piped_mac.vhd", 212, 430); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 319, 434); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 53, 425); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 53, 425, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("piped_mac.vhd", 59, 420); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 59, 420, false, false, false, false, true); // bP (w, cs) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("piped_mac.vhd", 300, 424); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 199, 499); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 200, 500, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("piped_mac.vhd", 301, 368); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,945 MB. GUI used memory: 90 MB. Current time: 9/19/22, 4:32:35 PM CDT
+// Elapsed time: 33 seconds
+selectCodeEditor("piped_mac.vhd", 247, 461); // bP (w, cs)
+// Elapsed time: 16 seconds
+selectCodeEditor("piped_mac.vhd", 117, 233); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 117, 233, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "piped_mac.vhd", 'c'); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 182, 454); // bP (w, cs)
+typeControlKey((HResource) null, "piped_mac.vhd", 'v'); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 5,953 MB (+4027kb) [00:26:34]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,977 MB. GUI used memory: 90 MB. Current time: 9/19/22, 4:33:40 PM CDT
+// Elapsed time: 25 seconds
+selectCodeEditor("piped_mac.vhd", 279, 473); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("piped_mac.vhd", 267, 488); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// G (cs): Invalid Top Modules: addNotify
+dismissDialog("Invalid Top Modules"); // G (cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("piped_mac.vhd", 183, 491); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 6,043 MB. GUI used memory: 90 MB. Current time: 9/19/22, 4:34:00 PM CDT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 51 seconds
+selectCodeEditor("piped_mac.vhd", 213, 488); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 213, 488, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("piped_mac.vhd", 228, 440); // bP (w, cs)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// am (cs): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_CANCEL, "Cancel"); // a (am)
+dismissDialog("Save Project"); // am (cs)
+selectCodeEditor("piped_mac.vhd", 234, 449); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("piped_mac.vhd", 242, 456); // bP (w, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 6,075 MB. GUI used memory: 91 MB. Current time: 9/19/22, 4:34:55 PM CDT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 58 seconds
+selectCodeEditor("piped_mac.vhd", 387, 455); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 427, 515); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 372, 448); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 367, 454); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 6,099 MB. GUI used memory: 90 MB. Current time: 9/19/22, 4:36:00 PM CDT
+selectCodeEditor("piped_mac.vhd", 241, 479); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 241, 489); // bP (w, cs)
+// Elapsed time: 19 seconds
+selectCodeEditor("piped_mac.vhd", 335, 301); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 350, 364); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 192, 439); // bP (w, cs)
+// Elapsed time: 11 seconds
+selectCodeEditor("piped_mac.vhd", 118, 391); // bP (w, cs)
+// Elapsed time: 34 seconds
+selectCodeEditor("piped_mac.vhd", 195, 395); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 121, 348); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 29 seconds
+selectCodeEditor("piped_mac.vhd", 203, 400); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 203, 429); // bP (w, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 6,123 MB. GUI used memory: 90 MB. Current time: 9/19/22, 4:37:55 PM CDT
+// Elapsed time: 31 seconds
+selectCodeEditor("piped_mac.vhd", 252, 351); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 254, 351, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("piped_mac.vhd", 228, 81); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 11 seconds
+selectCodeEditor("piped_mac.vhd", 268, 266); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 6,155 MB. GUI used memory: 90 MB. Current time: 9/19/22, 4:38:50 PM CDT
+// Elapsed time: 10 seconds
+selectCodeEditor("piped_mac.vhd", 96, 260); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 96, 260, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("piped_mac.vhd", 76, 447); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 99, 445); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("piped_mac.vhd", 231, 448); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 225, 443); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 12 seconds
+selectCodeEditor("piped_mac.vhd", 287, 221); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 287, 221, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("piped_mac.vhd", 326, 210); // bP (w, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 6,187 MB. GUI used memory: 90 MB. Current time: 9/19/22, 4:39:20 PM CDT
+selectCodeEditor("piped_mac.vhd", 316, 220); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 327, 223); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 324, 217); // bP (w, cs)
+// Elapsed time: 73 seconds
+selectCodeEditor("piped_mac.vhd", 269, 273); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 24 seconds
+selectCodeEditor("piped_mac.vhd", 294, 351); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 248, 297); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 248, 297, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("piped_mac.vhd", 283, 157); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 26, 160); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("piped_mac.vhd", 222, 485); // bP (w, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 6,227 MB. GUI used memory: 90 MB. Current time: 9/19/22, 4:41:15 PM CDT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 45 seconds
+selectCodeEditor("piped_mac.vhd", 425, 425); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("piped_mac.vhd", 212, 431); // bP (w, cs)
+// [Engine Memory]: 6,251 MB (+511kb) [00:35:20]
+selectCodeEditor("piped_mac.vhd", 447, 429); // bP (w, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 6,251 MB. GUI used memory: 90 MB. Current time: 9/19/22, 4:42:05 PM CDT
+// Elapsed time: 24 seconds
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 23 seconds
+selectCodeEditor("piped_mac.vhd", 496, 392); // bP (w, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 6,283 MB. GUI used memory: 90 MB. Current time: 9/19/22, 4:42:55 PM CDT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 21 seconds
+selectCodeEditor("piped_mac.vhd", 399, 450); // bP (w, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 6,315 MB. GUI used memory: 90 MB. Current time: 9/19/22, 4:43:15 PM CDT
+selectCodeEditor("piped_mac.vhd", 206, 490); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 386, 424); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 16 seconds
+selectCodeEditor("piped_mac.vhd", 247, 446); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 249, 460); // bP (w, cs)
+// Elapsed time: 265 seconds
+selectCodeEditor("piped_mac.vhd", 234, 363); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 233, 363, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("piped_mac.vhd", 276, 384); // bP (w, cs)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("piped_mac.vhd", 275, 387); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 387, 364); // bP (w, cs)
+// Elapsed time: 14 seconds
+selectCodeEditor("piped_mac.vhd", 120, 379); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 120, 379, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "piped_mac.vhd", 'c'); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 199, 379); // bP (w, cs)
+typeControlKey((HResource) null, "piped_mac.vhd", 'v'); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 217, 398); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 208, 381); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 208, 381, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "piped_mac.vhd", 'c'); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 299, 373); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 289, 382); // bP (w, cs)
+typeControlKey((HResource) null, "piped_mac.vhd", 'v'); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 6,347 MB. GUI used memory: 90 MB. Current time: 9/19/22, 4:49:00 PM CDT
+// Elapsed time: 68 seconds
+selectCodeEditor("piped_mac.vhd", 138, 403); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 123, 395); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 123, 395, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "piped_mac.vhd", 'c'); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 198, 396); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 174, 399); // bP (w, cs)
+typeControlKey((HResource) null, "piped_mac.vhd", 'v'); // bP (w, cs)
+typeControlKey((HResource) null, "piped_mac.vhd", 'v'); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("piped_mac.vhd", 342, 445); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 133, 369); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 129, 364); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 189, 357); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 189, 357, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("piped_mac.vhd", 199, 363); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 199, 363, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("piped_mac.vhd", 135, 367); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 135, 367, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "piped_mac.vhd", 'c'); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 170, 361); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 163, 366); // bP (w, cs)
+typeControlKey((HResource) null, "piped_mac.vhd", 'v'); // bP (w, cs)
+typeControlKey((HResource) null, "piped_mac.vhd", 'v'); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 573, 367); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 26, 372); // bP (w, cs)
+typeControlKey((HResource) null, "piped_mac.vhd", 'c'); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 192, 383); // bP (w, cs)
+typeControlKey((HResource) null, "piped_mac.vhd", 'v'); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 128, 381); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("piped_mac.vhd", 391, 485); // bP (w, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 6,379 MB. GUI used memory: 91 MB. Current time: 9/19/22, 4:50:55 PM CDT
+selectCodeEditor("piped_mac.vhd", 190, 476); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("piped_mac.vhd", 101, 402); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 101, 402, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("piped_mac.vhd", 112, 400); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 235, 394); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("piped_mac.vhd", 219, 415); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("piped_mac.vhd", 223, 460); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 234, 453); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("piped_mac.vhd", 344, 461); // bP (w, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 6,435 MB. GUI used memory: 91 MB. Current time: 9/19/22, 4:51:21 PM CDT
+selectCodeEditor("piped_mac.vhd", 343, 460, false, false, false, false, true); // bP (w, cs) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 20 seconds
+selectCodeEditor("piped_mac.vhd", 478, 457); // bP (w, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 6,459 MB. GUI used memory: 91 MB. Current time: 9/19/22, 4:51:45 PM CDT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 43 seconds
+selectCodeEditor("piped_mac.vhd", 459, 348); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("piped_mac.vhd", 474, 426); // bP (w, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 6,491 MB. GUI used memory: 91 MB. Current time: 9/19/22, 4:52:30 PM CDT
+selectCodeEditor("piped_mac.vhd", 347, 346); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 17 seconds
+selectCodeEditor("piped_mac.vhd", 353, 347); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 6,523 MB. GUI used memory: 91 MB. Current time: 9/19/22, 4:52:55 PM CDT
+// Elapsed time: 29 seconds
+selectCodeEditor("piped_mac.vhd", 254, 439); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 38 seconds
+selectCodeEditor("piped_mac.vhd", 318, 470); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("piped_mac.vhd", 153, 497); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 152, 506); // bP (w, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 6,555 MB. GUI used memory: 91 MB. Current time: 9/19/22, 4:54:00 PM CDT
+// Elapsed time: 217 seconds
+selectCodeEditor("piped_mac.vhd", 353, 346); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 6,571 MB (+7961kb) [00:51:01]
+// Elapsed time: 21 seconds
+selectCodeEditor("piped_mac.vhd", 422, 398); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 328, 454); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 268, 398); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 268, 398, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("piped_mac.vhd", 169, 399); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 6,587 MB. GUI used memory: 84 MB. Current time: 9/19/22, 4:58:11 PM CDT
+// Elapsed time: 51 seconds
+selectCodeEditor("piped_mac.vhd", 229, 250); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 230, 251); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 232, 247); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 232, 247, false, false, false, false, true); // bP (w, cs) - Double Click
+// Elapsed time: 195 seconds
+selectCodeEditor("piped_mac.vhd", 469, 483); // bP (w, cs)
+// Elapsed time: 18 seconds
+selectCodeEditor("piped_mac.vhd", 475, 383); // bP (w, cs)
+// Elapsed time: 31 seconds
+selectCodeEditor("piped_mac.vhd", 208, 88); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 208, 88, false, false, false, false, true); // bP (w, cs) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 16 seconds
+selectCodeEditor("piped_mac.vhd", 213, 81); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 315, 79); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 315, 79, false, false, false, false, true); // bP (w, cs) - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 6,608 MB. GUI used memory: 84 MB. Current time: 9/19/22, 5:03:21 PM CDT
+selectCodeEditor("piped_mac.vhd", 375, 81); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 374, 80, false, false, false, false, true); // bP (w, cs) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+typeControlKey(null, null, 'z');
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("piped_mac.vhd", 186, 271); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 186, 271, false, false, false, false, true); // bP (w, cs) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("piped_mac.vhd", 241, 406); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 180, 429); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 180, 429, false, false, false, false, true); // bP (w, cs) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("piped_mac.vhd", 296, 436); // bP (w, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 6,672 MB. GUI used memory: 84 MB. Current time: 9/19/22, 5:03:51 PM CDT
+// Elapsed time: 15 seconds
+selectCodeEditor("piped_mac.vhd", 392, 130); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 393, 128); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 393, 128, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("piped_mac.vhd", 404, 223); // bP (w, cs)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("piped_mac.vhd", 202, 110); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 202, 110, false, false, false, false, true); // bP (w, cs) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("piped_mac.vhd", 233, 112); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 233, 112, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "piped_mac.vhd", 'c'); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 187, 397); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 182, 398); // bP (w, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 6,704 MB. GUI used memory: 84 MB. Current time: 9/19/22, 5:04:31 PM CDT
+selectCodeEditor("piped_mac.vhd", 182, 398, false, true, false, false, true); // bP (w, cs) - Control Key - Double Click
+selectCodeEditor("piped_mac.vhd", 182, 398); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 181, 399); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 181, 399); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 199, 447); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 177, 398); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 177, 398, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "piped_mac.vhd", 'v'); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("piped_mac.vhd", 304, 197); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 304, 197, false, false, false, false, true); // bP (w, cs) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("piped_mac.vhd", 304, 197); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 304, 197, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey(null, null, 'z');
+typeControlKey((HResource) null, "piped_mac.vhd", 'c'); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 307, 202); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 307, 202, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "piped_mac.vhd", 'c'); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 164, 501); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 164, 501, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "piped_mac.vhd", 'v'); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("piped_mac.vhd", 324, 535); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 27 seconds
+selectCodeEditor("piped_mac.vhd", 395, 547); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 435, 512); // bP (w, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 6,768 MB. GUI used memory: 84 MB. Current time: 9/19/22, 5:05:16 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 6,768 MB. GUI used memory: 81 MB. Current time: 9/19/22, 5:35:16 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 6,768 MB. GUI used memory: 80 MB. Current time: 9/19/22, 6:05:16 PM CDT
