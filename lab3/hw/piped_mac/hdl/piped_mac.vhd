@@ -68,7 +68,7 @@ architecture behavioral of piped_mac is
     signal sum_bits      : fixed_t_wide_check := (others => '0');
     
     signal t_last_0, t_last_1  : std_logic;
-    signal data_ready : std_logic;
+    signal data_valid : std_logic;
 	signal input_ready : std_logic;
 	
 	
@@ -84,9 +84,8 @@ begin
     -- Interface signals
 
     -- Internal signal
-	data_ready <= not(t_last_0) and not(t_last_1) and SD_AXIS_TVALID;
-    SD_AXIS_TREADY <= not(t_last_0 or t_last_1);
-	
+    
+    
 	-- Debug Signals
    mac_debug <= x"00000002";  -- Double checking sanity
    
@@ -101,29 +100,31 @@ begin
         
         t_last_0 <= '0';
         t_last_1 <= '0';
+        
+        data_valid <= '0';
 		
       else
         for i in PIPE_STAGES'left to PIPE_STAGES'right loop
             case i is  -- Stages
                 when WAIT_FOR_VALUES =>
---                    SD_AXIS_TREADY <= input_ready;
-                    if data_ready = '1' then
+                    if SD_AXIS_TVALID = '1' then
                         mult_bits <= signed(SD_AXIS_TDATA(C_DATA_WIDTH-1 downto 0)) * signed(SD_AXIS_TDATA(C_DATA_WIDTH*2-1 downto C_DATA_WIDTH));
                         t_last_0  <= SD_AXIS_TLAST;
+                        data_valid <= '1';
                     
                     end if;
                     
                 when ADD =>
-                    if t_last_1 = '0' then
+                    if data_valid = '1' then
                         sum_bits <= sum_bits + mult_bits;
                         t_last_1 <= t_last_0;
+                        t_last_0 <= '0';
                                             
                     end if;
                                                         
                 when OUTPUT_VALUES =>
                     if t_last_1 = '1' then
                         MO_AXIS_TVALID <= '1';
---                        t_last_0 <= '0';
                         t_last_1 <= '0';
                         
                         if(sum_bits(2*C_DATA_WIDTH downto INTEGER_BITS+FIXED_BITS+FIXED_BITS) > 0) then
