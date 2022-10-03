@@ -1,0 +1,2138 @@
+/*
+
+Xilinx Vivado v2020.1 (64-bit) [Major: 2020, Minor: 1]
+SW Build: 2902540 on Wed May 27 19:54:35 MDT 2020
+IP Build: 2902112 on Wed May 27 22:43:36 MDT 2020
+
+Process ID (PID): 20940
+License: Customer
+
+Current time: 	Mon Oct 03 15:34:33 CDT 2022
+Time zone: 	Central Standard Time (America/Chicago)
+
+OS: Red Hat Enterprise Linux Workstation release 7.9 (Maipo)
+OS Version: 3.10.0-1160.62.1.el7.x86_64
+OS Architecture: amd64
+Available processors (cores): 20
+
+Display: :0
+Screen size: 1920x1200
+Screen resolution (DPI): 100
+Available screens: 2
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	/remote/Xilinx/2020.1/Vivado/2020.1/tps/lnx64/jre9.0.4
+Java executable location: 	/remote/Xilinx/2020.1/Vivado/2020.1/tps/lnx64/jre9.0.4/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	gaeckec
+User home directory: /home/gaeckec
+User working directory: /home/gaeckec/cpre487/lab3
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /remote/Xilinx/2020.1/Vivado
+HDI_APPROOT: /remote/Xilinx/2020.1/Vivado/2020.1
+RDI_DATADIR: /remote/Xilinx/2020.1/Vivado/2020.1/data
+RDI_BINDIR: /remote/Xilinx/2020.1/Vivado/2020.1/bin
+
+Vivado preferences file location: /home/gaeckec/.Xilinx/Vivado/2020.1/vivado.xml
+Vivado preferences directory: /home/gaeckec/.Xilinx/Vivado/2020.1/
+Vivado layouts directory: /home/gaeckec/.Xilinx/Vivado/2020.1/data/layouts
+PlanAhead jar file location: 	/remote/Xilinx/2020.1/Vivado/2020.1/lib/classes/planAhead.jar
+Vivado log file location: 	/home/gaeckec/cpre487/lab3/vivado.log
+Vivado journal file location: 	/home/gaeckec/cpre487/lab3/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-20940-co2050-16.ece.iastate.edu
+
+Xilinx Environment Variables
+----------------------------
+XILINX: /remote/Xilinx/2020.1/Vivado/2020.1/ids_lite/ISE
+XILINX_DSP: /remote/Xilinx/2020.1/Vivado/2020.1/ids_lite/ISE
+XILINX_PLANAHEAD: /remote/Xilinx/2020.1/Vivado/2020.1
+XILINX_SDK: /remote/Xilinx/2020.1/Vitis/2020.1
+XILINX_VITIS: /remote/Xilinx/2020.1/Vitis/2020.1
+XILINX_VIVADO: /remote/Xilinx/2020.1/Vivado/2020.1
+XILINX_VIVADO_HLS: /remote/Xilinx/2020.1/Vivado/2020.1
+
+
+GUI allocated memory:	185 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 5,653 MB
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// Tcl Command: 'rdi::info_commands {device::*}'
+// Tcl Command: 'rdi::info_commands {debug::*}'
+// Tcl Command: 'rdi::info_commands {*}'
+selectList(PAResourceQtoS.SyntheticaGettingStartedView_RECENT_PROJECTS, "/home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.xpr", 0); // r (J, cs)
+// [GUI Memory]: 123 MB (+126610kb) [00:00:05]
+// [Engine Memory]: 5,651 MB (+5774498kb) [00:00:05]
+// bz (cs):  Open Project : addNotify
+// Opening Vivado Project: /home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.xpr. Version: Vivado v2020.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project /home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.xpr 
+// HMemoryUtils.trashcanNow. Engine heap size: 5,663 MB. GUI used memory: 66 MB. Current time: 10/3/22, 3:34:34 PM CDT
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project /home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/gaeckec/cpre487/lab3/hw/piped_mac'. 
+// TclEventType: PROJECT_NEW
+// WARNING: HEventQueue.dispatchEvent() is taking  1165 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/remote/Xilinx/2020.1/Vivado/2020.1/data/ip'. 
+// Project name: tc_piped_mac; location: /home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac; part: xc7z020clg484-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 7263.273 ; gain = 36.289 ; free physical = 24829 ; free virtual = 43953 
+dismissDialog("Open Project"); // bz (cs)
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, piped_mac(behavioral) (piped_mac.vhd)]", 1, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, piped_mac(behavioral) (piped_mac.vhd)]", 1, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 11, false); // u (J, cs)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ai (ao, Popup.HeavyWeightWindow)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// e (cs):  Run Simulation : addNotify
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: Command: launch_simulation  
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.sim/sim_1/behav/xsim' INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [SIM-utils-54] Inspecting design source files for 'piped_mac' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.sim/sim_1/behav/xsim' 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: xvhdl --incr --relax -prj piped_mac_vhdl.prj 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '1' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.sim/sim_1/behav/xsim' 
+// TclEventType: LAUNCH_SIM
+// TclEventType: LOAD_FEATURE
+// Tcl Message: xelab -wto 2bf29a238fe54c84829c9223978451ea --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot piped_mac_behav xil_defaultlib.piped_mac -log elaborate.log Vivado Simulator 2020.1 Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved. Running: /remote/Xilinx/2020.1/Vivado/2020.1/bin/unwrapped/lnx64.o/xelab -wto 2bf29a238fe54c84829c9223978451ea --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot piped_mac_behav xil_defaultlib.piped_mac -log elaborate.log  Using 8 slave threads. Starting static elaboration Completed static elaboration INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel 
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.sim/sim_1/behav/xsim' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "piped_mac_behav -key {Behavioral:sim_1:Functional:piped_mac} -tclbatch {piped_mac.tcl} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// Tcl Message: Vivado Simulator 2020.1 
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// [GUI Memory]: 135 MB (+5614kb) [00:00:30]
+// Tcl Message: Time resolution is 1 ps 
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// Waveform: addNotify
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// HMemoryUtils.trashcanNow. Engine heap size: 5,763 MB. GUI used memory: 105 MB. Current time: 10/3/22, 3:34:58 PM CDT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: source piped_mac.tcl 
+// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } # run 1000ns 
+// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'piped_mac_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 1000ns 
+// 'd' command handler elapsed time: 5 seconds
+dismissDialog("Run Simulation"); // e (cs)
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // aa (q, cs)
+selectMenuItem(RDIResourceCommand.RDICommands_RUN_SCRIPT, "Run Tcl Script..."); // ai (cs)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // aa (q, cs)
+// Run Command: RDIResourceCommand.RDICommands_RUN_SCRIPT
+setFileChooser("/home/gaeckec/cpre487/lab3/hw/piped_mac/tb/tcl/piped_mac_tb.tcl");
+// Source Tcl File: '/home/gaeckec/cpre487/lab3/hw/piped_mac/tb/tcl/piped_mac_tb.tcl'
+// Tcl Command: 'source /home/gaeckec/cpre487/lab3/hw/piped_mac/tb/tcl/piped_mac_tb.tcl'
+// bz (cs):  Source Tcl Script : addNotify
+// TclEventType: SIMULATION_MODEL_ABOUT_TO_CLOSE
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_MODEL_RELOADED
+// HMemoryUtils.trashcanNow. Engine heap size: 5,745 MB. GUI used memory: 96 MB. Current time: 10/3/22, 3:35:08 PM CDT
+// TclEventType: SIMULATION_MODEL_RELOADED
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// Tcl Message: source /home/gaeckec/cpre487/lab3/hw/piped_mac/tb/tcl/piped_mac_tb.tcl 
+// Tcl Message: # relaunch_sim 
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: Command: launch_simulation -simset sim_1 -mode behavioral 
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.sim/sim_1/behav/xsim' INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [SIM-utils-54] Inspecting design source files for 'piped_mac' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.sim/sim_1/behav/xsim' 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: xvhdl --incr --relax -prj piped_mac_vhdl.prj 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '1' seconds 
+// Tcl Message: Command: launch_simulation -simset sim_1 -mode behavioral 
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.sim/sim_1/behav/xsim' INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.sim/sim_1/behav/xsim' 
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: xelab -wto 2bf29a238fe54c84829c9223978451ea --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot piped_mac_behav xil_defaultlib.piped_mac -log elaborate.log Vivado Simulator 2020.1 Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved. Running: /remote/Xilinx/2020.1/Vivado/2020.1/bin/unwrapped/lnx64.o/xelab -wto 2bf29a238fe54c84829c9223978451ea --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot piped_mac_behav xil_defaultlib.piped_mac -log elaborate.log  Using 8 slave threads. Starting static elaboration Completed static elaboration INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel 
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds 
+// Tcl Message: Vivado Simulator 2020.1 
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_MODEL_ABOUT_TO_CLOSE
+// [GUI Memory]: 143 MB (+1628kb) [00:00:45]
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_MODEL_RELOADED
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_DELETE_ALL_BREAKPOINTS
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// [GUI Memory]: 154 MB (+4479kb) [00:00:45]
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// HMemoryUtils.trashcanNow. Engine heap size: 5,780 MB. GUI used memory: 85 MB. Current time: 10/3/22, 3:35:12 PM CDT
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// HMemoryUtils.trashcanNow. Engine heap size: 5,782 MB. GUI used memory: 106 MB. Current time: 10/3/22, 3:35:12 PM CDT
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// HMemoryUtils.trashcanNow. Engine heap size: 5,782 MB. GUI used memory: 85 MB. Current time: 10/3/22, 3:35:12 PM CDT
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// HMemoryUtils.trashcanNow. Engine heap size: 5,782 MB. GUI used memory: 85 MB. Current time: 10/3/22, 3:35:13 PM CDT
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: Time resolution is 1 ps 
+// Tcl Message: ERROR: [Simtcl 6-8] No such HDL object /piped_mac/S_AXIS_TVALID 
+// 'cQ' command handler elapsed time: 9 seconds
+dismissDialog("Source Tcl Script"); // bz (cs)
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, mult_bits[63:0]]", 13, true, false, true, false, false, false); // a (r, cs) - Control Key - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, sum_bits[64:0]]", 14, true, false, true, false, false, false); // a (r, cs) - Control Key - Node
+// HMemoryUtils.trashcanNow. Engine heap size: 5,782 MB. GUI used memory: 85 MB. Current time: 10/3/22, 3:35:16 PM CDT
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, MO_AXIS_TDATA[31:0]]", 9, true, false, true, false, false, false); // a (r, cs) - Control Key - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, sum_bits[64:0]]", 14, true, false, false, false, true, false); // a (r, cs) - Popup Trigger - Node
+selectMenu("Radix"); // af (ao, Popup.HeavyWeightWindow)
+selectMenuItem((HResource) null, "Signed Decimal"); // W (cs, Popup.HeavyWeightWindow)
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (g, cs)
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 5,782 MB. GUI used memory: 86 MB. Current time: 10/3/22, 3:35:21 PM CDT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 5,782 MB. GUI used memory: 87 MB. Current time: 10/3/22, 3:35:22 PM CDT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 5,782 MB. GUI used memory: 88 MB. Current time: 10/3/22, 3:35:22 PM CDT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 5,782 MB. GUI used memory: 86 MB. Current time: 10/3/22, 3:35:23 PM CDT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// Elapsed time: 20 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "piped_mac.vhd", 0); // m (l, cs)
+// Elapsed time: 133 seconds
+selectCodeEditor("piped_mac.vhd", 134, 160); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 10 seconds
+selectCodeEditor("piped_mac.vhd", 112, 246); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("piped_mac.vhd", 226, 448); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,816 MB. GUI used memory: 86 MB. Current time: 10/3/22, 3:38:14 PM CDT
+selectCodeEditor("piped_mac.vhd", 543, 410); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 632, 418); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("piped_mac.vhd", 369, 442); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 148, 67); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,840 MB. GUI used memory: 86 MB. Current time: 10/3/22, 3:38:34 PM CDT
+selectCodeEditor("piped_mac.vhd", 125, 383); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("piped_mac.vhd", 158, 153); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 243, 269); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 11 seconds
+selectCodeEditor("piped_mac.vhd", 116, 333); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 116, 333, false, false, false, false, true); // bP (w, cs) - Double Click
+// Elapsed time: 15 seconds
+selectCodeEditor("piped_mac.vhd", 360, 156); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,896 MB. GUI used memory: 86 MB. Current time: 10/3/22, 3:40:39 PM CDT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// G (cs): Invalid Top Modules: addNotify
+// Elapsed time: 94 seconds
+dismissDialog("Invalid Top Modules"); // G (cs)
+selectCodeEditor("piped_mac.vhd", 167, 331); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 166, 324); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectCodeEditor("piped_mac.vhd", 592, 278); // bP (w, cs)
+// [Engine Memory]: 5,944 MB (+10215kb) [00:06:30]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("piped_mac.vhd", 666, 369); // bP (w, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 5,960 MB. GUI used memory: 86 MB. Current time: 10/3/22, 3:41:04 PM CDT
+// Elapsed time: 14 seconds
+selectCodeEditor("piped_mac.vhd", 222, 273); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 222, 273, false, false, false, false, true); // bP (w, cs) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("piped_mac.vhd", 562, 401); // bP (w, cs)
+// Elapsed time: 15 seconds
+selectCodeEditor("piped_mac.vhd", 349, 566); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 361, 566); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("piped_mac.vhd", 381, 612); // bP (w, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 5,992 MB. GUI used memory: 86 MB. Current time: 10/3/22, 3:41:39 PM CDT
+// Elapsed time: 195 seconds
+selectCodeEditor("piped_mac.vhd", 378, 378); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 22 seconds
+selectCodeEditor("piped_mac.vhd", 373, 583); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 382, 580); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 369, 586); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 369, 586, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("piped_mac.vhd", 361, 576); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 361, 576, false, false, false, false, true); // bP (w, cs) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("piped_mac.vhd", 334, 501); // bP (w, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 6,024 MB. GUI used memory: 87 MB. Current time: 10/3/22, 3:45:29 PM CDT
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Untitled 1*", 1); // m (l, cs)
+selectButton(PAResourceCommand.PACommandNames_SIMULATION_RELAUNCH, "simulation_relaunch"); // E (g, cs)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RELAUNCH
+// b (cs):  Relaunch Simulation : addNotify
+// TclEventType: SIMULATION_MODEL_ABOUT_TO_CLOSE
+// Tcl Message: relaunch_sim 
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_MODEL_RELOADED
+// HMemoryUtils.trashcanNow. Engine heap size: 5,998 MB. GUI used memory: 87 MB. Current time: 10/3/22, 3:45:31 PM CDT
+// TclEventType: SIMULATION_MODEL_RELOADED
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: Command: launch_simulation -simset sim_1 -mode behavioral 
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.sim/sim_1/behav/xsim' INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [SIM-utils-54] Inspecting design source files for 'piped_mac' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.sim/sim_1/behav/xsim' 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: xvhdl --incr --relax -prj piped_mac_vhdl.prj INFO: [VRFC 10-163] Analyzing VHDL file "/home/gaeckec/cpre487/lab3/hw/piped_mac/hdl/piped_mac.vhd" into library xil_defaultlib INFO: [VRFC 10-3107] analyzing entity 'piped_mac' 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '1' seconds 
+// Tcl Message: Command: launch_simulation -simset sim_1 -mode behavioral 
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.sim/sim_1/behav/xsim' INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.sim/sim_1/behav/xsim' 
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds INFO: [USF-XSim-99] Step results log file:'/home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.sim/sim_1/behav/xsim/elaborate.log' 
+// Tcl Message: ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.sim/sim_1/behav/xsim/elaborate.log' file for more information. ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation. 
+// Tcl Message: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors. 
+// Tcl Message: ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.  
+// CommandFailedException: ERROR: [Common 17-69] Command failed: ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.   
+// HOptionPane Error: 'ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.   (Relaunch Simulation)'
+// 'a' command handler elapsed time: 4 seconds
+selectButton("OptionPane.button", "OK"); // JButton (v, B)
+// a (cs): Critical Messages: addNotify
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (a)
+dismissDialog("Critical Messages"); // a (cs)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "piped_mac.vhd", 0); // m (l, cs)
+// Elapsed time: 15 seconds
+selectButton(PAResourceCommand.PACommandNames_SIMULATION_RELAUNCH, "simulation_relaunch"); // E (g, cs)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RELAUNCH
+// b (cs):  Relaunch Simulation : addNotify
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: relaunch_sim 
+// Tcl Message: Command: launch_simulation -simset sim_1 -mode behavioral 
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.sim/sim_1/behav/xsim' INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [SIM-utils-54] Inspecting design source files for 'piped_mac' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.sim/sim_1/behav/xsim' 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: xvhdl --incr --relax -prj piped_mac_vhdl.prj 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '1' seconds 
+// Tcl Message: Command: launch_simulation -simset sim_1 -mode behavioral 
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.sim/sim_1/behav/xsim' INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.sim/sim_1/behav/xsim' 
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds INFO: [USF-XSim-99] Step results log file:'/home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.sim/sim_1/behav/xsim/elaborate.log' 
+// Tcl Message: ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.sim/sim_1/behav/xsim/elaborate.log' file for more information. ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation. 
+// Tcl Message: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors. 
+// Tcl Message: ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.  
+// CommandFailedException: ERROR: [Common 17-69] Command failed: ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.   
+// HOptionPane Error: 'ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.   (Relaunch Simulation)'
+// 'a' command handler elapsed time: 3 seconds
+selectButton("OptionPane.button", "OK"); // JButton (v, B)
+// a (cs): Critical Messages: addNotify
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (a)
+dismissDialog("Critical Messages"); // a (cs)
+// Elapsed time: 14 seconds
+selectCodeEditor("piped_mac.vhd", 387, 500); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 387, 500, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("piped_mac.vhd", 290, 505); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 13 seconds
+selectCodeEditor("piped_mac.vhd", 358, 527); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 288, 504); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 331, 500); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 331, 500, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("piped_mac.vhd", 330, 523); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 286, 502); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("piped_mac.vhd", 350, 590); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 312, 504); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("piped_mac.vhd", 326, 579); // bP (w, cs)
+// Elapsed time: 23 seconds
+selectCodeEditor("piped_mac.vhd", 312, 498); // bP (w, cs)
+// Elapsed time: 18 seconds
+selectCodeEditor("piped_mac.vhd", 288, 507); // bP (w, cs)
+// Elapsed time: 10 seconds
+selectCodeEditor("piped_mac.vhd", 193, 499); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 288, 507); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 714, 505); // bP (w, cs)
+// Elapsed time: 10 seconds
+selectCodeEditor("piped_mac.vhd", 329, 507); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 329, 507, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("piped_mac.vhd", 288, 510); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 289, 504); // bP (w, cs)
+// Elapsed time: 21 seconds
+selectCodeEditor("piped_mac.vhd", 290, 508); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 290, 503); // bP (w, cs)
+// Elapsed time: 16 seconds
+selectCodeEditor("piped_mac.vhd", 656, 507); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 344, 502); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 705, 507); // bP (w, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 6,045 MB. GUI used memory: 86 MB. Current time: 10/3/22, 3:49:14 PM CDT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 24 seconds
+selectCodeEditor("piped_mac.vhd", 741, 536); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 884, 509); // bP (w, cs)
+selectButton(PAResourceCommand.PACommandNames_SIMULATION_RELAUNCH, "simulation_relaunch"); // E (g, cs)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RELAUNCH
+// b (cs):  Relaunch Simulation : addNotify
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: relaunch_sim 
+// Tcl Message: Command: launch_simulation -simset sim_1 -mode behavioral 
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.sim/sim_1/behav/xsim' INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [SIM-utils-54] Inspecting design source files for 'piped_mac' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.sim/sim_1/behav/xsim' 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: xvhdl --incr --relax -prj piped_mac_vhdl.prj INFO: [VRFC 10-163] Analyzing VHDL file "/home/gaeckec/cpre487/lab3/hw/piped_mac/hdl/piped_mac.vhd" into library xil_defaultlib INFO: [VRFC 10-3107] analyzing entity 'piped_mac' 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '1' seconds 
+// Tcl Message: Command: launch_simulation -simset sim_1 -mode behavioral 
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.sim/sim_1/behav/xsim' INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.sim/sim_1/behav/xsim' 
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// HMemoryUtils.trashcanNow. Engine heap size: 6,098 MB. GUI used memory: 87 MB. Current time: 10/3/22, 3:49:34 PM CDT
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds 
+// Tcl Message: Vivado Simulator 2020.1 
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_MODEL_ABOUT_TO_CLOSE
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_MODEL_RELOADED
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_DELETE_ALL_BREAKPOINTS
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: Time resolution is 1 ps 
+// 'a' command handler elapsed time: 3 seconds
+dismissDialog("Relaunch Simulation"); // b (cs)
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Untitled 1*", 1); // m (l, cs)
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // aa (q, cs)
+selectMenuItem(RDIResourceCommand.RDICommands_RUN_SCRIPT, "Run Tcl Script..."); // ai (cs)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // aa (q, cs)
+// Run Command: RDIResourceCommand.RDICommands_RUN_SCRIPT
+setFileChooser("/home/gaeckec/cpre487/lab3/hw/piped_mac/tb/tcl/piped_mac_tb.tcl");
+// Source Tcl File: '/home/gaeckec/cpre487/lab3/hw/piped_mac/tb/tcl/piped_mac_tb.tcl'
+// Tcl Command: 'source /home/gaeckec/cpre487/lab3/hw/piped_mac/tb/tcl/piped_mac_tb.tcl'
+// bz (cs):  Source Tcl Script : addNotify
+// TclEventType: SIMULATION_MODEL_ABOUT_TO_CLOSE
+// Tcl Message: source /home/gaeckec/cpre487/lab3/hw/piped_mac/tb/tcl/piped_mac_tb.tcl 
+// Tcl Message: # relaunch_sim 
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_MODEL_RELOADED
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: Command: launch_simulation -simset sim_1 -mode behavioral 
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.sim/sim_1/behav/xsim' INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [SIM-utils-54] Inspecting design source files for 'piped_mac' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.sim/sim_1/behav/xsim' 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: xvhdl --incr --relax -prj piped_mac_vhdl.prj 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '1' seconds 
+// Tcl Message: Command: launch_simulation -simset sim_1 -mode behavioral 
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.sim/sim_1/behav/xsim' INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.sim/sim_1/behav/xsim' 
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: xelab -wto 2bf29a238fe54c84829c9223978451ea --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot piped_mac_behav xil_defaultlib.piped_mac -log elaborate.log Vivado Simulator 2020.1 Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved. Running: /remote/Xilinx/2020.1/Vivado/2020.1/bin/unwrapped/lnx64.o/xelab -wto 2bf29a238fe54c84829c9223978451ea --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot piped_mac_behav xil_defaultlib.piped_mac -log elaborate.log  Using 8 slave threads. Starting static elaboration Completed static elaboration INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel 
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds 
+// Tcl Message: Vivado Simulator 2020.1 
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_MODEL_ABOUT_TO_CLOSE
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_MODEL_RELOADED
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_DELETE_ALL_BREAKPOINTS
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// HMemoryUtils.trashcanNow. Engine heap size: 6,128 MB. GUI used memory: 113 MB. Current time: 10/3/22, 3:49:46 PM CDT
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// HMemoryUtils.trashcanNow. Engine heap size: 6,128 MB. GUI used memory: 111 MB. Current time: 10/3/22, 3:49:46 PM CDT
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// HMemoryUtils.trashcanNow. Engine heap size: 6,128 MB. GUI used memory: 90 MB. Current time: 10/3/22, 3:49:47 PM CDT
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// HMemoryUtils.trashcanNow. Engine heap size: 6,128 MB. GUI used memory: 112 MB. Current time: 10/3/22, 3:49:47 PM CDT
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// HMemoryUtils.trashcanNow. Engine heap size: 6,128 MB. GUI used memory: 112 MB. Current time: 10/3/22, 3:49:47 PM CDT
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: Time resolution is 1 ps 
+// Tcl Message: ERROR: [Simtcl 6-8] No such HDL object /piped_mac/S_AXIS_TVALID 
+// 'cQ' command handler elapsed time: 6 seconds
+dismissDialog("Source Tcl Script"); // bz (cs)
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (g, cs)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// Elapsed time: 29 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 15, false); // u (J, cs)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis]", 4); // u (J, cs)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// f (cs): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bz (cs):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (cs)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs synth_1 -jobs 4 
+// Tcl Message: [Mon Oct  3 15:50:20 2022] Launched synth_1... Run output will be captured here: /home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bz (cs)
+// TclEventType: RUN_STATUS_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "piped_mac.vhd", 0); // m (l, cs)
+selectCodeEditor("piped_mac.vhd", 306, 336); // bP (w, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 13 seconds
+selectCodeEditor("piped_mac.vhd", 254, 404); // bP (w, cs)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 15, false); // u (J, cs)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bz (cs):  Resetting Runs : addNotify
+selectButton("OptionPane.button", "OK"); // JButton (v, B)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// f (cs): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bz (cs):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (cs)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs synth_1 -jobs 4 
+// Tcl Message: [Mon Oct  3 15:50:45 2022] Launched synth_1... Run output will be captured here: /home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.runs/synth_1/runme.log 
+// 'k' command handler elapsed time: 3 seconds
+dismissDialog("Starting Design Runs"); // bz (cs)
+// TclEventType: RUN_STATUS_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager]", 0, true); // u (J, cs) - Node
+// Run Command: PAResourceCommand.PACommandNames_GOTO_PROJECT_MANAGER
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; Running synth_design... ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Mon Oct 03 15:50:46 CDT 2022 ; 00:00:00 ; Vivado Synthesis Defaults (Vivado Synthesis 2020) ; Vivado Synthesis Default Reports (Vivado Synthesis 2020) ; xc7z020clg484-1 ; co2050-16.ece.iastate.edu ; Vivado Synthesis Defaults", 0, "Running synth_design...", 2, true); // az (J, cs) - Node
+selectTab(RDIResource.PropertiesView_TABBED_PANE, (HResource) null, "Log", 3); // i (c, cs)
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// ag (cs): Synthesis Failed: addNotify
+// Elapsed time: 31 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ag)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Synthesis Failed"); // ag (cs)
+// Elapsed time: 10 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [Simtcl 6-8] No such HDL object /piped_mac/S_AXIS_TVALID. ]", 5, true); // ah (J, cs) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [Simtcl 6-8] No such HDL object /piped_mac/S_AXIS_TVALID. ]", 5, true, false, false, false, false, true); // ah (J, cs) - Double Click - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-425] missing case choices [/home/gaeckec/cpre487/lab3/hw/piped_mac/hdl/piped_mac.vhd:113]. ]", 8, false); // ah (J, cs)
+// Elapsed time: 11 seconds
+collapseTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages]", 1); // ah (J, cs)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-285] failed synthesizing module 'piped_mac' [/home/gaeckec/cpre487/lab3/hw/piped_mac/hdl/piped_mac.vhd:53]. ]", 4, false); // ah (J, cs)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-425] missing case choices [/home/gaeckec/cpre487/lab3/hw/piped_mac/hdl/piped_mac.vhd:113]. ]", 3, false); // ah (J, cs)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-425] missing case choices [/home/gaeckec/cpre487/lab3/hw/piped_mac/hdl/piped_mac.vhd:113]. ]", 3, false); // ah (J, cs)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/home/gaeckec/cpre487/lab3/hw/piped_mac/hdl/piped_mac.vhd;-;;-;16;-;line;-;113;-;;-;16;-;"); // ah (J, cs)
+selectCodeEditor("piped_mac.vhd", 308, 217); // bP (w, cs)
+selectCodeEditor("piped_mac.vhd", 308, 217, false, false, false, false, true); // bP (w, cs) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 15, false); // u (J, cs)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bz (cs):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// f (cs): Launch Runs: addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 6,145 MB. GUI used memory: 92 MB. Current time: 10/3/22, 3:52:09 PM CDT
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bz (cs):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (cs)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs synth_1 -jobs 4 
+// Tcl Message: [Mon Oct  3 15:52:10 2022] Launched synth_1... Run output will be captured here: /home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bz (cs)
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 11 seconds
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; Running synth_design... ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Mon Oct 03 15:52:11 CDT 2022 ; 00:00:10 ; Vivado Synthesis Defaults (Vivado Synthesis 2020) ; Vivado Synthesis Default Reports (Vivado Synthesis 2020) ; xc7z020clg484-1 ; co2050-16.ece.iastate.edu ; Vivado Synthesis Defaults", 0, "Running synth_design...", 2, true); // az (J, cs) - Node
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// ag (cs): Synthesis Completed: addNotify
+// Elapsed time: 50 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ag)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// f (cs): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bz (cs):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (cs)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs impl_1 -jobs 4 
+// Tcl Message: [Mon Oct  3 15:53:14 2022] Launched impl_1... Run output will be captured here: /home/gaeckec/cpre487/lab3/hw/piped_mac/vivado/tc_piped_mac/tc_piped_mac.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // bz (cs)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 37 seconds
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "impl_1 ; constrs_1 ; Running place_design... ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Mon Oct 03 15:53:24 CDT 2022 ; 00:00:26 ; Vivado Implementation Defaults (Vivado Implementation 2020) ; Vivado Implementation Default Reports (Vivado Implementation 2020) ; xc7z020clg484-1 ; co2050-16.ece.iastate.edu ; Default settings for Implementation.", 1, "Running place_design...", 2, false); // az (J, cs)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// ag (cs): Implementation Completed: addNotify
+// Elapsed time: 29 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ag)
+// Run Command: PAResourceCommand.PACommandNames_GOTO_IMPLEMENTED_DESIGN
+// bz (cs):  Open Implemented Design : addNotify
+// Tcl Message: open_run impl_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 6,228 MB. GUI used memory: 95 MB. Current time: 10/3/22, 3:54:34 PM CDT
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: POWER_CNS_STALE
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 6,656 MB. GUI used memory: 95 MB. Current time: 10/3/22, 3:54:37 PM CDT
+// [Engine Memory]: 6,656 MB (+434700kb) [00:20:11]
+// TclEventType: DESIGN_NEW
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// Device: addNotify
+// [GUI Memory]: 172 MB (+10224kb) [00:20:12]
+// DeviceView Instantiated
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: INFO: [Device 21-403] Loading part xc7z020clg484-1 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 7859.320 ; gain = 0.000 ; free physical = 24275 ; free virtual = 43468 
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 41 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2020.1 INFO: [Project 1-570] Preparing netlist for logic optimization INFO: [Timing 38-478] Restoring timing data from binary archive. INFO: [Timing 38-479] Binary timing data restore complete. INFO: [Project 1-856] Restoring constraints from binary archive. INFO: [Project 1-853] Binary constraint restore complete. 
+// Tcl Message: Reading XDEF placement. Reading placer database... Reading XDEF routing. 
+// Tcl Message: Read XDEF File: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 8254.090 ; gain = 0.000 ; free physical = 23766 ; free virtual = 42959 
+// Tcl Message: Restored from archive | CPU: 0.030000 secs | Memory: 0.737656 MB | 
+// Tcl Message: Finished XDEF File Restore: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 8254.090 ; gain = 0.000 ; free physical = 23766 ; free virtual = 42959 Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 8254.090 ; gain = 0.000 ; free physical = 23766 ; free virtual = 42959 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary: No Unisim elements were transformed.  
+// Device view-level: 0.0
+// [GUI Memory]: 183 MB (+2222kb) [00:20:12]
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// Tcl Message: open_run: Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 8503.742 ; gain = 644.422 ; free physical = 23648 ; free virtual = 42841 
+// TclEventType: DRC_ADDED
+// TclEventType: METHODOLOGY_ADDED
+// TclEventType: POWER_UPDATED
+// TclEventType: TIMING_SUMMARY_UPDATED
+// 'dZ' command handler elapsed time: 19 seconds
+// V (cs): Critical Messages: addNotify
+// Elapsed time: 19 seconds
+dismissDialog("Open Implemented Design"); // bz (cs)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (V)
+dismissDialog("Critical Messages"); // V (cs)
+// [GUI Memory]: 198 MB (+6583kb) [00:20:16]
+selectButton(PAResourceAtoD.DesignTimingSumSectionPanel_WORST_NEGATIVE_SLACK, "-0.007 ns"); // h (Q, cs)
+// PAPropertyPanels.initPanels (Path 1) elapsed time: 0.3s
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 1 ; -0.0074225073 ; 5 ; 31 ; sum_bits_reg[49]/C ; MO_AXIS_TDATA_reg[22]/D ; 4.9480658 ; 2.09 ; 2.8580663 ; 5.0 ; main ; main ;  ; 0.03535534", 0, "sum_bits_reg[49]/C", 4); // i (J, cs)
+// Device view-level: 0.3
+// HMemoryUtils.trashcanNow. Engine heap size: 6,845 MB. GUI used memory: 137 MB. Current time: 10/3/22, 3:54:58 PM CDT
+// Device view-level: 1.2
+// Device view-level: 0.9
+// Device view-level: 0.6
+// Device view-level: 0.9
+// Device view-level: 1.2
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 144 MB. Current time: 10/3/22, 3:54:59 PM CDT
+// Device view-level: 1.5
+// Device view-level: 1.8
+// Device view-level: 2.0
+// Device view-level: 1.8
+// Device view-level: 1.5
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 137 MB. Current time: 10/3/22, 3:55:18 PM CDT
+// Device view-level: 1.2
+// Device view-level: 1.5
+// Device view-level: 1.8
+// Device view-level: 2.0
+// Device view-level: 2.3
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 198 MB. Current time: 10/3/22, 3:55:19 PM CDT
+// Device view-level: 2.6
+// Device view-level: 2.3
+// [GUI Memory]: 208 MB (+417kb) [00:20:54]
+// Device view-level: 2.0
+// Device view-level: 1.8
+// Device view-level: 1.5
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 140 MB. Current time: 10/3/22, 3:55:22 PM CDT
+// Device view-level: 1.8
+// Device view-level: 2.0
+// Device view-level: 2.3
+// Device view-level: 2.6
+// Device view-level: 2.9
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 201 MB. Current time: 10/3/22, 3:55:23 PM CDT
+// Device view-level: 3.2
+// Device view-level: 3.5
+// Device view-level: 3.8
+// Device view-level: 4.1
+// Device view-level: 4.4
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 170 MB. Current time: 10/3/22, 3:55:24 PM CDT
+// Device view-level: 4.7
+// Device view-level: 5.0
+// Device view-level: 4.7
+// Device view-level: 4.4
+// Device view-level: 4.1
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: -77 MB. Current time: 10/3/22, 3:55:25 PM CDT
+// Device view-level: 3.8
+// Device view-level: 4.1
+// Device view-level: 4.4
+// Device view-level: 4.7
+// Device view-level: 5.0
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 140 MB. Current time: 10/3/22, 3:55:25 PM CDT
+// Device view-level: 5.3
+// Device view-level: 5.6
+// Device view-level: 5.8
+// Device view-level: 5.6
+// Device view-level: 5.3
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 163 MB. Current time: 10/3/22, 3:55:26 PM CDT
+// Device view-level: 5.0
+// Device view-level: 4.7
+// Device view-level: 4.4
+// Device view-level: 4.1
+// Device view-level: 3.8
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 140 MB. Current time: 10/3/22, 3:55:28 PM CDT
+// Device view-level: 3.5
+// Device view-level: 3.2
+// Device view-level: 2.6
+// Device view-level: 2.3
+// Device view-level: 2.0
+// Device view-level: 1.8
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 140 MB. Current time: 10/3/22, 3:55:28 PM CDT
+// Device view-level: 1.5
+// Device view-level: 1.8
+// Device view-level: 2.0
+// Device view-level: 2.3
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 141 MB. Current time: 10/3/22, 3:55:29 PM CDT
+// Device view-level: 2.6
+// Device view-level: 2.9
+// Device view-level: 3.2
+// Device view-level: 3.5
+// Device view-level: 3.8
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 190 MB. Current time: 10/3/22, 3:55:30 PM CDT
+// Device view-level: 4.1
+// Device view-level: 3.8
+// [GUI Memory]: 219 MB (+379kb) [00:21:04]
+// Device view-level: 4.1
+// Device view-level: 4.4
+// Device view-level: 4.7
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 169 MB. Current time: 10/3/22, 3:55:32 PM CDT
+// Device view-level: 5.0
+// Device view-level: 5.3
+// Device view-level: 5.6
+// Device view-level: 5.3
+// Device view-level: 5.0
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 173 MB. Current time: 10/3/22, 3:55:32 PM CDT
+// Device view-level: 4.7
+// Device view-level: 4.4
+// Device view-level: 4.1
+// Device view-level: 3.8
+// [GUI Memory]: 230 MB (+22kb) [00:21:08]
+// Device view-level: 4.1
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 148 MB. Current time: 10/3/22, 3:55:35 PM CDT
+// Device view-level: 4.7
+// Device view-level: 4.4
+// Device view-level: 4.1
+// Device view-level: 3.8
+// Device view-level: 3.5
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 180 MB. Current time: 10/3/22, 3:55:36 PM CDT
+// Device view-level: 3.8
+// Device view-level: 4.1
+// Device view-level: 4.4
+// Device view-level: 4.1
+// Device view-level: 3.8
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 200 MB. Current time: 10/3/22, 3:55:37 PM CDT
+// Device view-level: 3.5
+// Device view-level: 3.2
+// Device view-level: 2.9
+// Device view-level: 2.6
+// Device view-level: 2.3
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 142 MB. Current time: 10/3/22, 3:55:38 PM CDT
+// Device view-level: 2.0
+// Device view-level: 1.8
+// Device view-level: 1.5
+// Device view-level: 1.2
+// Device view-level: 0.9
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 199 MB. Current time: 10/3/22, 3:55:39 PM CDT
+// Device view-level: 1.2
+// Device view-level: 1.5
+// Device view-level: 1.8
+// Device view-level: 2.0
+// Device view-level: 1.8
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 165 MB. Current time: 10/3/22, 3:55:39 PM CDT
+// Device view-level: 1.5
+// Device view-level: 1.2
+// Device view-level: 0.9
+// Device view-level: 1.2
+// Device view-level: 1.5
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 201 MB. Current time: 10/3/22, 3:55:40 PM CDT
+// Device view-level: 1.8
+// Device view-level: 2.0
+// Device view-level: 2.3
+// Device view-level: 2.6
+// Device view-level: 2.3
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: -63 MB. Current time: 10/3/22, 3:55:41 PM CDT
+// Device view-level: 2.0
+// Device view-level: 2.3
+// Device view-level: 2.9
+// Device view-level: 3.2
+// Device view-level: 3.5
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 140 MB. Current time: 10/3/22, 3:55:41 PM CDT
+// Device view-level: 3.8
+// Device view-level: 4.1
+// Device view-level: 4.4
+// Device view-level: 4.7
+// Device view-level: 4.4
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 161 MB. Current time: 10/3/22, 3:55:42 PM CDT
+// Device view-level: 4.1
+// Device view-level: 3.8
+// Device view-level: 3.5
+// Device view-level: 3.2
+// Device view-level: 2.9
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 148 MB. Current time: 10/3/22, 3:55:43 PM CDT
+// Device view-level: 2.6
+// Device view-level: 2.3
+// Device view-level: 2.6
+// Device view-level: 2.9
+// Device view-level: 3.2
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 211 MB. Current time: 10/3/22, 3:55:44 PM CDT
+// Device view-level: 3.5
+// Device view-level: 3.8
+// Device view-level: 4.1
+// Device view-level: 4.4
+// Device view-level: 4.7
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 192 MB. Current time: 10/3/22, 3:55:45 PM CDT
+// Device view-level: 4.4
+// Device view-level: 4.1
+// Device view-level: 3.8
+// Device view-level: 3.5
+// Device view-level: 3.8
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 203 MB. Current time: 10/3/22, 3:55:48 PM CDT
+// Device view-level: 4.1
+// Device view-level: 4.4
+// Device view-level: 4.1
+// Device view-level: 3.8
+// Device view-level: 3.5
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 200 MB. Current time: 10/3/22, 3:55:49 PM CDT
+// Device view-level: 3.2
+// Device view-level: 3.5
+// Device view-level: 3.8
+// Device view-level: 4.1
+// Elapsed time: 72 seconds
+selectTab((HResource) null, (HResource) null, "Power", 5); // aL (aI, cs)
+selectTab((HResource) null, (HResource) null, "DRC", 6); // aL (aI, cs)
+selectTab((HResource) null, (HResource) null, "Methodology", 7); // aL (aI, cs)
+selectTab((HResource) null, (HResource) null, "Timing", 8); // aL (aI, cs)
+selectTab((HResource) null, (HResource) null, "Design Runs", 4); // aL (aI, cs)
+selectTab((HResource) null, (HResource) null, "Reports", 3); // aL (aI, cs)
+selectTab((HResource) null, (HResource) null, "Messages", 1); // aL (aI, cs)
+selectTab((HResource) null, (HResource) null, "Log", 2); // aL (aI, cs)
+selectTab((HResource) null, (HResource) null, "Power", 5); // aL (aI, cs)
+selectTab((HResource) null, (HResource) null, "DRC", 6); // aL (aI, cs)
+selectTab((HResource) null, (HResource) null, "Methodology", 7); // aL (aI, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 140 MB. Current time: 10/3/22, 3:59:39 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 159 MB. Current time: 10/3/22, 3:59:39 PM CDT
+// Device view-level: 3.8
+// Device view-level: 3.5
+// Device view-level: 3.2
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 161 MB. Current time: 10/3/22, 3:59:40 PM CDT
+// Device view-level: 2.9
+// Device view-level: 2.6
+// Device view-level: 2.3
+// Device view-level: 2.0
+// Device view-level: 1.8
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 139 MB. Current time: 10/3/22, 3:59:41 PM CDT
+// Device view-level: 1.5
+// Device view-level: 1.2
+// Device view-level: 1.5
+// Device view-level: 1.8
+// Device view-level: 2.0
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 144 MB. Current time: 10/3/22, 3:59:43 PM CDT
+// Device view-level: 1.8
+// Device view-level: 1.5
+// Device view-level: 1.2
+// Device view-level: 0.9
+// Device view-level: 0.6
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 140 MB. Current time: 10/3/22, 3:59:43 PM CDT
+// Device view-level: 0.3
+// Device view-level: 0.0
+// Device view-level: 0.0
+// Device view-level: 0.0
+// Device view-level: 0.3
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 191 MB. Current time: 10/3/22, 3:59:44 PM CDT
+// Device view-level: 0.6
+// Device view-level: 0.9
+// Device view-level: 1.2
+// Device view-level: 1.5
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 163 MB. Current time: 10/3/22, 3:59:44 PM CDT
+// Device view-level: 1.8
+// Device view-level: 2.0
+// Device view-level: 2.3
+// Device view-level: 2.6
+// Device view-level: 2.9
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 162 MB. Current time: 10/3/22, 3:59:45 PM CDT
+// Device view-level: 3.2
+// Device view-level: 3.5
+// Device view-level: 3.2
+// Device view-level: 3.5
+// Device view-level: 3.8
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 199 MB. Current time: 10/3/22, 3:59:46 PM CDT
+// Device view-level: 4.1
+// Device view-level: 3.8
+// Device view-level: 3.5
+// Device view-level: 3.8
+// Device view-level: 4.1
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 144 MB. Current time: 10/3/22, 3:59:49 PM CDT
+// Device view-level: 4.4
+// Device view-level: 4.1
+// Device view-level: 3.8
+// Device view-level: 3.5
+// Device view-level: 3.2
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 162 MB. Current time: 10/3/22, 3:59:50 PM CDT
+// Device view-level: 2.9
+// Device view-level: 2.6
+// Device view-level: 2.3
+// Device view-level: 2.0
+// Device view-level: 1.8
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 204 MB. Current time: 10/3/22, 3:59:51 PM CDT
+// Device view-level: 1.5
+// Device view-level: 1.2
+// Device view-level: 0.9
+// Device view-level: 0.6
+// Device view-level: 0.3
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 209 MB. Current time: 10/3/22, 3:59:52 PM CDT
+// Device view-level: 0.0
+// Device view-level: 0.0
+// Device view-level: 0.3
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 166 MB. Current time: 10/3/22, 3:59:54 PM CDT
+// Device view-level: 0.6
+// Device view-level: 0.9
+// Device view-level: 1.2
+// Device view-level: 1.5
+// Device view-level: 1.8
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 141 MB. Current time: 10/3/22, 3:59:56 PM CDT
+// Device view-level: 2.6
+// Device view-level: 2.3
+// Device view-level: 2.0
+// Device view-level: 1.8
+// Device view-level: 1.5
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 183 MB. Current time: 10/3/22, 3:59:57 PM CDT
+// Device view-level: 1.8
+// Device view-level: 2.0
+// Device view-level: 2.3
+// Device view-level: 2.6
+// Device view-level: 2.9
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 198 MB. Current time: 10/3/22, 3:59:58 PM CDT
+// Device view-level: 3.2
+// Device view-level: 3.5
+// Device view-level: 3.8
+// Device view-level: 4.1
+// Device view-level: 4.4
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 141 MB. Current time: 10/3/22, 3:59:59 PM CDT
+// Device view-level: 4.7
+// Device view-level: 4.4
+// Device view-level: 4.1
+// Device view-level: 3.5
+// Device view-level: 3.2
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 160 MB. Current time: 10/3/22, 4:00:00 PM CDT
+// Device view-level: 2.9
+// Device view-level: 2.6
+// Device view-level: 2.0
+// Device view-level: 1.8
+// Device view-level: 2.0
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 173 MB. Current time: 10/3/22, 4:00:01 PM CDT
+// Device view-level: 2.3
+// Device view-level: 2.6
+// Device view-level: 2.9
+// Device view-level: 3.2
+// Device view-level: 3.5
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 183 MB. Current time: 10/3/22, 4:00:02 PM CDT
+// Device view-level: 3.8
+// Device view-level: 4.1
+// Device view-level: 3.8
+// Device view-level: 3.5
+// Device view-level: 3.2
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 216 MB. Current time: 10/3/22, 4:00:04 PM CDT
+// Device view-level: 2.6
+// Device view-level: 2.3
+// Device view-level: 2.0
+// Device view-level: 1.8
+// Device view-level: 1.5
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 166 MB. Current time: 10/3/22, 4:00:05 PM CDT
+// Device view-level: 1.2
+// Device view-level: 1.5
+// Device view-level: 1.8
+// Device view-level: 2.0
+// Device view-level: 1.8
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 228 MB. Current time: 10/3/22, 4:00:06 PM CDT
+// Device view-level: 1.5
+// Device view-level: 1.2
+// Device view-level: 0.9
+// Device view-level: 0.6
+// Device view-level: 0.3
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 145 MB. Current time: 10/3/22, 4:00:08 PM CDT
+// Device view-level: 0.6
+// Device view-level: 0.9
+// Device view-level: 1.2
+// Device view-level: 1.5
+// Device view-level: 1.8
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 147 MB. Current time: 10/3/22, 4:00:11 PM CDT
+// Device view-level: 2.3
+// Device view-level: 2.0
+// Device view-level: 1.8
+// Device view-level: 2.0
+// Device view-level: 2.3
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 180 MB. Current time: 10/3/22, 4:00:17 PM CDT
+// Device view-level: 2.6
+// Device view-level: 2.9
+// Device view-level: 3.2
+// Device view-level: 3.5
+// Device view-level: 3.8
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 208 MB. Current time: 10/3/22, 4:00:23 PM CDT
+// Device view-level: 4.1
+// Device view-level: 4.4
+// Device view-level: 4.7
+// Device view-level: 5.0
+// Device view-level: 4.7
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 198 MB. Current time: 10/3/22, 4:00:26 PM CDT
+// Device view-level: 4.4
+// Device view-level: 4.1
+// Device view-level: 3.8
+// Device view-level: 3.5
+// Device view-level: 3.2
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 206 MB. Current time: 10/3/22, 4:00:28 PM CDT
+// Device view-level: 2.9
+// Device view-level: 2.6
+// Device view-level: 2.3
+// [GUI Memory]: 242 MB (+425kb) [00:26:02]
+// Device view-level: 2.6
+// Device view-level: 3.2
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 212 MB. Current time: 10/3/22, 4:00:29 PM CDT
+// Device view-level: 3.5
+// Device view-level: 3.8
+// Device view-level: 4.1
+// Device view-level: 4.4
+// Device view-level: 4.7
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 220 MB. Current time: 10/3/22, 4:00:30 PM CDT
+// Device view-level: 5.0
+// Device view-level: 4.7
+// Device view-level: 4.4
+// Device view-level: 4.1
+// Device view-level: 3.8
+// Device view-level: 3.5
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 140 MB. Current time: 10/3/22, 4:00:33 PM CDT
+// Device view-level: 3.2
+// Device view-level: 2.9
+// Device view-level: 2.6
+// Device view-level: 2.3
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 168 MB. Current time: 10/3/22, 4:00:34 PM CDT
+// Device view-level: 1.8
+// Device view-level: 1.5
+// Device view-level: 1.8
+// Device view-level: 2.0
+// Device view-level: 2.3
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 211 MB. Current time: 10/3/22, 4:00:35 PM CDT
+// Device view-level: 2.6
+// Device view-level: 2.9
+// Device view-level: 3.2
+// Device view-level: 2.9
+// Device view-level: 2.6
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 144 MB. Current time: 10/3/22, 4:00:36 PM CDT
+// Device view-level: 2.9
+// Device view-level: 3.2
+// Device view-level: 3.5
+// Device view-level: 3.8
+// Device view-level: 4.1
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 188 MB. Current time: 10/3/22, 4:00:36 PM CDT
+// Device view-level: 4.4
+// Device view-level: 4.1
+// Device view-level: 3.5
+// Device view-level: 3.2
+// Device view-level: 2.9
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 207 MB. Current time: 10/3/22, 4:00:37 PM CDT
+// Device view-level: 2.6
+// Device view-level: 2.3
+// Device view-level: 2.0
+// Device view-level: 1.2
+// Device view-level: 0.9
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 185 MB. Current time: 10/3/22, 4:00:37 PM CDT
+// Device view-level: 0.6
+// Device view-level: 0.9
+// Device view-level: 1.2
+// Device view-level: 1.5
+// Device view-level: 1.8
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 193 MB. Current time: 10/3/22, 4:00:38 PM CDT
+// Device view-level: 2.0
+// Device view-level: 2.3
+// Device view-level: 2.6
+// Device view-level: 2.9
+// Device view-level: 3.2
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 209 MB. Current time: 10/3/22, 4:00:40 PM CDT
+// Device view-level: 3.8
+// Device view-level: 4.1
+// Device view-level: 4.4
+// Device view-level: 4.1
+// Device view-level: 3.8
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 26 MB. Current time: 10/3/22, 4:00:40 PM CDT
+// Device view-level: 3.5
+// Device view-level: 3.2
+// Device view-level: 2.9
+// Device view-level: 2.6
+// Device view-level: 2.3
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 144 MB. Current time: 10/3/22, 4:00:41 PM CDT
+// Device view-level: 2.6
+// Device view-level: 2.9
+// Device view-level: 3.2
+// Device view-level: 3.5
+// Device view-level: 3.8
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 169 MB. Current time: 10/3/22, 4:00:42 PM CDT
+// Device view-level: 3.5
+// Device view-level: 3.2
+// Device view-level: 2.9
+// Device view-level: 2.6
+// Device view-level: 2.3
+// HMemoryUtils.trashcanNow. Engine heap size: 6,847 MB. GUI used memory: 144 MB. Current time: 10/3/22, 4:00:42 PM CDT
+// Device view-level: 1.8
+// Elapsed time: 258 seconds
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 460047, 285377, false, true, false, false, false); // E (F, cs) - Control Key
+// Device select: 'Site - SLICE_X104Y69'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 5967, 3759, 1233, 649); // U (m, cs)
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 459278, 287529); // E (F, cs)
+// Device select: 'Site - SLICE_X104Y69'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 5958, 3763, 1233, 649); // U (m, cs)
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 460354, 285453); // E (F, cs)
+// Device select: 'Site - SLICE_X105Y70'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 5988, 3713, 1233, 649); // U (m, cs)
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 460354, 285453, false, false, false, false, true); // E (F, cs) - Double Click
+// Device select: 'Site - SLICE_X105Y70'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 5988, 3713, 1233, 649); // U (m, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 156 MB. Current time: 10/3/22, 4:00:45 PM CDT
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 459509, 285300); // E (F, cs)
+// Device select: 'Site - SLICE_X104Y70'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 5977, 3711, 1233, 649); // U (m, cs)
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 459509, 285300, false, false, false, false, true); // E (F, cs) - Double Click
+// Device select: 'Site - SLICE_X104Y70'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 5977, 3711, 1233, 649); // U (m, cs)
+// Device view-level: 2.0
+// Device view-level: 2.3
+// Device view-level: 2.6
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 150 MB. Current time: 10/3/22, 4:00:46 PM CDT
+// Device view-level: 2.9
+// Device view-level: 3.2
+// Device view-level: 3.8
+// Device view-level: 4.1
+// Device view-level: 3.8
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 196 MB. Current time: 10/3/22, 4:00:47 PM CDT
+// Device view-level: 3.2
+// Device view-level: 2.9
+// Device view-level: 2.3
+// Device view-level: 2.0
+// Device view-level: 1.2
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 190 MB. Current time: 10/3/22, 4:00:47 PM CDT
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 462199, 309978); // E (F, cs)
+// Device view-level: 1.5
+// Device view-level: 1.2
+// Device view-level: 0.9
+// Device view-level: 0.6
+// Device view-level: 0.3
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 221 MB. Current time: 10/3/22, 4:00:50 PM CDT
+// Device view-level: 0.0
+// Device view-level: 0.3
+// Device view-level: 0.6
+// Device view-level: 0.9
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 178 MB. Current time: 10/3/22, 4:00:54 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 209 MB. Current time: 10/3/22, 4:00:54 PM CDT
+// Device view-level: 1.2
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 148 MB. Current time: 10/3/22, 4:00:56 PM CDT
+// Device view-level: 2.0
+// Device view-level: 2.3
+// Device view-level: 2.6
+// Device view-level: 2.9
+// Device view-level: 3.2
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 211 MB. Current time: 10/3/22, 4:00:57 PM CDT
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 458944, 285458); // E (F, cs)
+// Device select: 'Site - SLICE_X104Y70'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 45332, 28196, 1233, 649); // U (m, cs)
+selectTab((HResource) null, (HResource) null, "Timing", 8); // aL (aI, cs)
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 1 ; -0.0074225073 ; 5 ; 31 ; sum_bits_reg[49]/C ; MO_AXIS_TDATA_reg[22]/D ; 4.9480658 ; 2.09 ; 2.8580663 ; 5.0 ; main ; main ;  ; 0.03535534", 0, "Path 1", 0); // i (J, cs)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, main, Pulse Width -0.450 ns]", 9, false); // a (J, cs)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, main, Setup -0.007 ns]", 7, false); // a (J, cs)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, main, Hold 0.106 ns]", 8, false); // a (J, cs)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, main, Pulse Width -0.450 ns]", 9, false); // a (J, cs)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, main, Hold 0.106 ns]", 8, false); // a (J, cs)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, main, Setup -0.007 ns]", 7, false); // a (J, cs)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, main, Hold 0.106 ns]", 8, false); // a (J, cs)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, main, Setup -0.007 ns]", 7, false); // a (J, cs)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, main, Setup -0.007 ns]", 7, false); // a (J, cs)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, main, Hold 0.106 ns]", 8, false); // a (J, cs)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, main, Setup -0.007 ns]", 7, false); // a (J, cs)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, main, Hold 0.106 ns]", 8, false); // a (J, cs)
+collapseTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, main]", 6); // a (J, cs)
+// Elapsed time: 14 seconds
+selectButton(PAResourceItoN.IctElementSummarySectionPanel_PULSE_WIDTH, "-0.450 ns"); // h (F, cs)
+// Elapsed time: 16 seconds
+selectTable(PAResourceOtoP.PulseWidthClockChecksTablePanel_PULSE_WIDTH_CLOCK_CHECKS_TABLE, "High Pulse Width ; Fast ; FDRE/C ; n/a ; 0.5 ; 0.050000004 ; -0.45 ; SLICE_X104Y62 ; mult_bits_reg[10]/C", 3, "SLICE_X104Y62", 7); // f (J, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 157 MB. Current time: 10/3/22, 4:01:56 PM CDT
+selectTable(PAResourceOtoP.PulseWidthClockChecksTablePanel_PULSE_WIDTH_CLOCK_CHECKS_TABLE, "High Pulse Width ; Slow ; FDRE/C ; n/a ; 0.5 ; 0.050000004 ; -0.45 ; SLICE_X104Y62 ; mult_bits_reg[10]/C", 2, "SLICE_X104Y62", 7); // f (J, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 146 MB. Current time: 10/3/22, 4:04:48 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 195 MB. Current time: 10/3/22, 4:04:49 PM CDT
+// Device view-level: 2.9
+// Device view-level: 2.6
+// Device view-level: 2.3
+// Device view-level: 2.0
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 211 MB. Current time: 10/3/22, 4:04:50 PM CDT
+// Device view-level: 1.8
+// Device view-level: 1.5
+// Device view-level: 1.2
+// Device view-level: 0.9
+// Device view-level: 0.6
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 199 MB. Current time: 10/3/22, 4:04:51 PM CDT
+// Elapsed time: 175 seconds
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, main, Setup -0.007 ns]", 7, false); // a (J, cs)
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 1 ; -0.0074225073 ; 5 ; 31 ; sum_bits_reg[49]/C ; MO_AXIS_TDATA_reg[22]/D ; 4.9480658 ; 2.09 ; 2.8580663 ; 5.0 ; main ; main ;  ; 0.03535534", 0, "5", 2); // i (J, cs)
+// Device view-level: 0.9
+// Device view-level: 1.2
+// Device view-level: 0.9
+// Device view-level: 0.6
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 210 MB. Current time: 10/3/22, 4:04:55 PM CDT
+// Device view-level: 0.3
+// Device view-level: 0.0
+// Device view-level: 0.3
+// Device view-level: 0.6
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 146 MB. Current time: 10/3/22, 4:04:57 PM CDT
+// Device view-level: 0.9
+// Device view-level: 1.2
+// Device view-level: 1.5
+// Device view-level: 1.8
+// Device view-level: 2.0
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 193 MB. Current time: 10/3/22, 4:04:58 PM CDT
+// Device view-level: 1.8
+// Device view-level: 2.0
+// Device view-level: 1.8
+// Device view-level: 2.0
+// Device view-level: 2.3
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 163 MB. Current time: 10/3/22, 4:05:00 PM CDT
+// Device view-level: 2.6
+// Device view-level: 2.9
+// Device view-level: 3.2
+// Device view-level: 3.5
+// Device view-level: 3.8
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 229 MB. Current time: 10/3/22, 4:05:01 PM CDT
+// Device view-level: 3.5
+// Device view-level: 3.2
+// Device view-level: 2.9
+// Device view-level: 2.6
+// Device view-level: 2.3
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 147 MB. Current time: 10/3/22, 4:05:02 PM CDT
+// Device view-level: 2.0
+// Device view-level: 1.8
+// Device view-level: 1.5
+// Device view-level: 1.2
+// Device view-level: 1.5
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 196 MB. Current time: 10/3/22, 4:05:03 PM CDT
+// Device view-level: 1.8
+// Device view-level: 2.0
+// Device view-level: 1.8
+// Device view-level: 1.5
+// Device view-level: 1.2
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 225 MB. Current time: 10/3/22, 4:05:04 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 206 MB. Current time: 10/3/22, 4:05:05 PM CDT
+// Device view-level: 1.5
+// Device view-level: 1.8
+// Device view-level: 2.0
+// Device view-level: 2.3
+// Device view-level: 2.6
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 150 MB. Current time: 10/3/22, 4:05:07 PM CDT
+// Device view-level: 2.9
+// Device view-level: 3.2
+// Device view-level: 3.5
+// Device view-level: 3.2
+// Device view-level: 2.9
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 215 MB. Current time: 10/3/22, 4:05:08 PM CDT
+// Device view-level: 3.2
+// Device view-level: 3.5
+// Device view-level: 3.8
+// Device view-level: 4.1
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 150 MB. Current time: 10/3/22, 4:05:10 PM CDT
+// Device view-level: 4.4
+// Device view-level: 4.7
+// Device view-level: 5.0
+// Device view-level: 5.3
+// Device view-level: 5.0
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 203 MB. Current time: 10/3/22, 4:05:12 PM CDT
+// Device view-level: 4.7
+// Device view-level: 4.4
+// Device view-level: 4.1
+// Device view-level: 4.4
+// Device view-level: 4.7
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 220 MB. Current time: 10/3/22, 4:05:14 PM CDT
+// Device view-level: 4.4
+// Device view-level: 4.1
+// Device view-level: 3.8
+// Device view-level: 4.1
+// Device view-level: 4.4
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 218 MB. Current time: 10/3/22, 4:05:17 PM CDT
+// Device view-level: 4.7
+// Device view-level: 5.0
+// Device view-level: 4.7
+// Device view-level: 4.4
+// Device view-level: 4.1
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 184 MB. Current time: 10/3/22, 4:05:23 PM CDT
+// Device view-level: 3.8
+// Device view-level: 3.5
+// Device view-level: 3.2
+// Device view-level: 3.5
+// Device view-level: 3.8
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 225 MB. Current time: 10/3/22, 4:05:25 PM CDT
+// Device view-level: 4.1
+// Device view-level: 4.4
+// Device view-level: 4.7
+// Device view-level: 5.0
+// Device view-level: 5.3
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 211 MB. Current time: 10/3/22, 4:05:26 PM CDT
+// Device view-level: 5.6
+// Device view-level: 5.8
+// Device view-level: 5.6
+// Device view-level: 5.3
+// Device view-level: 5.0
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 145 MB. Current time: 10/3/22, 4:05:27 PM CDT
+// Device view-level: 3.8
+// Device view-level: 3.5
+// Device view-level: 3.2
+// Device view-level: 2.9
+// Device view-level: 3.2
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 216 MB. Current time: 10/3/22, 4:05:28 PM CDT
+// Device view-level: 3.5
+// Device view-level: 3.8
+// Device view-level: 4.1
+// Device view-level: 4.4
+// Device view-level: 4.7
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 148 MB. Current time: 10/3/22, 4:05:29 PM CDT
+// Device view-level: 5.3
+// Device view-level: 5.0
+// Device view-level: 4.4
+// Device view-level: 4.1
+// Device view-level: 3.8
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 175 MB. Current time: 10/3/22, 4:05:30 PM CDT
+// Device view-level: 3.5
+// Device view-level: 3.8
+// Device view-level: 4.1
+// Device view-level: 4.4
+// Device view-level: 4.7
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 154 MB. Current time: 10/3/22, 4:05:31 PM CDT
+// Device view-level: 4.4
+// Device view-level: 4.1
+// Device view-level: 3.8
+// Device view-level: 3.5
+// Device view-level: 3.2
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 145 MB. Current time: 10/3/22, 4:05:32 PM CDT
+// Device view-level: 2.9
+// Device view-level: 2.6
+// Device view-level: 2.0
+// Device view-level: 2.3
+// Device view-level: 2.9
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 199 MB. Current time: 10/3/22, 4:05:33 PM CDT
+// Device view-level: 3.2
+// Device view-level: 3.5
+// Device view-level: 3.8
+// Device view-level: 4.1
+// Device view-level: 4.4
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 211 MB. Current time: 10/3/22, 4:05:34 PM CDT
+// Device view-level: 4.7
+// Device view-level: 5.0
+// Device view-level: 4.7
+// Device view-level: 4.4
+// Device view-level: 4.1
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 195 MB. Current time: 10/3/22, 4:05:34 PM CDT
+// Device view-level: 3.8
+// Device view-level: 3.5
+// Device view-level: 3.2
+// Device view-level: 2.9
+// Device view-level: 2.6
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 156 MB. Current time: 10/3/22, 4:05:35 PM CDT
+// Device view-level: 2.3
+// Device view-level: 1.8
+// Device view-level: 1.5
+// Device view-level: 1.2
+// Device view-level: 0.9
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 194 MB. Current time: 10/3/22, 4:05:36 PM CDT
+// Device view-level: 1.2
+// Device view-level: 1.5
+// Device view-level: 1.8
+// Device view-level: 2.0
+// Device view-level: 2.3
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 149 MB. Current time: 10/3/22, 4:05:38 PM CDT
+// Device view-level: 3.2
+// Device view-level: 3.5
+// Device view-level: 3.8
+// Device view-level: 4.1
+// Device view-level: 4.4
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 237 MB. Current time: 10/3/22, 4:05:39 PM CDT
+// Device view-level: 4.7
+// Device view-level: 5.0
+// [GUI Memory]: 254 MB (+155kb) [00:31:13]
+// [GUI Memory]: 267 MB (+265kb) [00:31:13]
+// Device view-level: 4.7
+// Device view-level: 4.4
+// Device view-level: 4.1
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 153 MB. Current time: 10/3/22, 4:05:40 PM CDT
+// Device view-level: 3.8
+// Device view-level: 3.5
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: -358 MB. Current time: 10/3/22, 4:05:41 PM CDT
+// Device view-level: 3.8
+// [GUI Memory]: 285 MB (+4104kb) [00:31:15]
+// Device view-level: 4.1
+// Device view-level: 4.4
+// Device view-level: 4.7
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 270 MB. Current time: 10/3/22, 4:05:43 PM CDT
+// Device view-level: 4.4
+// [GUI Memory]: 300 MB (+633kb) [00:31:17]
+// [GUI Memory]: 315 MB (+508kb) [00:31:17]
+// Device view-level: 4.1
+// Device view-level: 3.8
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 315 MB. Current time: 10/3/22, 4:05:45 PM CDT
+// Device view-level: 3.5
+// Device view-level: 3.2
+// Device view-level: 2.9
+// Device view-level: 2.6
+// [GUI Memory]: 331 MB (+515kb) [00:31:19]
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 148 MB. Current time: 10/3/22, 4:05:47 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 146 MB. Current time: 10/3/22, 4:05:48 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 146 MB. Current time: 10/3/22, 4:05:49 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 149 MB. Current time: 10/3/22, 4:05:50 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 145 MB. Current time: 10/3/22, 4:05:51 PM CDT
+// Device view-level: 2.3
+// Device view-level: 2.0
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 219 MB. Current time: 10/3/22, 4:05:52 PM CDT
+// Device view-level: 2.3
+// Device view-level: 2.6
+// Device view-level: 2.9
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 202 MB. Current time: 10/3/22, 4:05:54 PM CDT
+// Device view-level: 3.2
+// Device view-level: 3.5
+// Device view-level: 3.8
+// Device view-level: 4.1
+// Device view-level: 4.4
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 147 MB. Current time: 10/3/22, 4:05:55 PM CDT
+// Device view-level: 4.7
+// Device view-level: 5.0
+// Device view-level: 4.7
+// Device view-level: 4.4
+// Device view-level: 4.1
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 217 MB. Current time: 10/3/22, 4:05:57 PM CDT
+// Device view-level: 3.8
+// Device view-level: 3.5
+// Device view-level: 3.8
+// Device view-level: 4.1
+// Device view-level: 4.4
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 62 MB. Current time: 10/3/22, 4:05:59 PM CDT
+// Device view-level: 4.7
+// Device view-level: 4.4
+// Device view-level: 4.1
+// Device view-level: 3.8
+// Device view-level: 3.5
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 177 MB. Current time: 10/3/22, 4:06:00 PM CDT
+// Device view-level: 3.2
+// Device view-level: 2.9
+// Device view-level: 3.2
+// Device view-level: 3.5
+// Device view-level: 3.8
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 229 MB. Current time: 10/3/22, 4:06:01 PM CDT
+// Device view-level: 4.4
+// Device view-level: 4.7
+// Device view-level: 4.4
+// Device view-level: 4.1
+// Device view-level: 3.8
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 177 MB. Current time: 10/3/22, 4:06:01 PM CDT
+// Device view-level: 3.5
+// Device view-level: 3.2
+// Device view-level: 2.9
+// Device view-level: 2.6
+// Device view-level: 2.3
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 147 MB. Current time: 10/3/22, 4:06:01 PM CDT
+// Device view-level: 2.0
+// Device view-level: 2.3
+// Device view-level: 2.6
+// Device view-level: 2.9
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 213 MB. Current time: 10/3/22, 4:06:06 PM CDT
+// Device view-level: 3.2
+// Device view-level: 3.5
+// Device view-level: 3.8
+// Device view-level: 4.1
+// Device view-level: 4.4
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 201 MB. Current time: 10/3/22, 4:06:06 PM CDT
+// Device view-level: 4.7
+// Device view-level: 4.4
+// Device view-level: 4.1
+// Device view-level: 3.8
+// Device view-level: 3.5
+// HMemoryUtils.trashcanNow. Engine heap size: 6,849 MB. GUI used memory: 197 MB. Current time: 10/3/22, 4:06:10 PM CDT
+// Device view-level: 3.8
+// Device view-level: 4.1
+// Device view-level: 4.4
+// Device view-level: 4.7

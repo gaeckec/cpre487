@@ -2,8 +2,8 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Mon Sep 26 17:54:03 2022
-# Process ID: 4382
+# Start of session at: Mon Oct  3 15:34:14 2022
+# Process ID: 20940
 # Current directory: /home/gaeckec/cpre487/lab3
 # Command line: vivado
 # Log file: /home/gaeckec/cpre487/lab3/vivado.log
@@ -15,3 +15,20 @@ update_compile_order -fileset sources_1
 launch_simulation
 source piped_mac.tcl
 source /home/gaeckec/cpre487/lab3/hw/piped_mac/tb/tcl/piped_mac_tb.tcl
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+relaunch_sim
+relaunch_sim
+relaunch_sim
+source /home/gaeckec/cpre487/lab3/hw/piped_mac/tb/tcl/piped_mac_tb.tcl
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+open_run impl_1

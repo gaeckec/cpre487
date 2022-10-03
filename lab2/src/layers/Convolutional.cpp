@@ -4,7 +4,9 @@
 #include "../Types.h"
 #include "Layer.h"
 #include "Convolutional.h"
+#include <chrono>
 
+using namespace std::chrono;
 
 namespace ML {
     // --- Begin Student Code ---
@@ -61,6 +63,7 @@ namespace ML {
         //Debugging Var - var[x][y][z]
         int input_x, input_y;
 
+        auto start = high_resolution_clock::now();
 
         for(n = 0; n < batch_size; n++){
             for(m = 0; m < num_filter_channels; m++){
@@ -89,7 +92,11 @@ namespace ML {
         }
 
         // printf("\nDim 0 = %d, Dim 1 = %d, Dim 2 = %d\n", output_height, output_width, num_filter_channels);
-        printf("Convolution Finished\n\r");
+        //printf("Convolution Finished\n\r");
+        auto end = high_resolution_clock::now();
+
+        auto total = duration_cast<microseconds>(end - start);
+        printf("Convolution Finished in %d us\n\r", total.count());
     }
 
 

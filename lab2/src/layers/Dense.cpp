@@ -4,7 +4,9 @@
 #include "../Types.h"
 #include "Layer.h"
 #include "Dense.h"
+#include <chrono>
 
+using namespace std::chrono;
 
 namespace ML {
     // --- Begin Student Code ---
@@ -34,6 +36,7 @@ namespace ML {
         //predeclair variables
         int n,m,h;
 
+        auto start = high_resolution_clock::now();
         //loop through and perform the opperation
         for(n = 0; n < batch_size; n++){
             for(m = 0; m < num_input_channels; m++){
@@ -45,7 +48,10 @@ namespace ML {
                 if(denseOutputData[m] < 0) { denseOutputData[m] = 0.0; }
             } 
         }
-        printf("Dense Finished\n\r");
+        auto end = high_resolution_clock::now();
+
+        auto total = duration_cast<microseconds>(end - start);
+        printf("Dense Finished in %d us\n\r", total.count());
     }
     
 

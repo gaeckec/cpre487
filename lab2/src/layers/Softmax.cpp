@@ -6,7 +6,9 @@
 #include "Softmax.h"
 #include <algorithm>
 #include <math.h>
+#include <chrono>
 
+using namespace std::chrono;
 
 namespace ML {
     // --- Begin Student Code ---
@@ -19,6 +21,8 @@ namespace ML {
         int X = getInputParams().dims[0];
         // printf("%d\n\r", I);
 
+        auto start = high_resolution_clock::now();
+
         fp32 sum;
         for(int i = 0; i < X; ++i) {
             sum += exp(inputData[i]);
@@ -30,7 +34,10 @@ namespace ML {
             // printf("%lf\n\r", outputData[i]);
         }
 
-        printf("Softmax Finished\n\r");
+        auto end = high_resolution_clock::now();
+
+        auto total = duration_cast<microseconds>(end - start);
+        printf("SoftMax Finished in %d us\n\r", total.count());
     }
 
 

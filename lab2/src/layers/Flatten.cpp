@@ -5,6 +5,9 @@
 #include "Layer.h"
 #include "Flatten.h"
 #include <algorithm>
+#include <chrono>
+
+using namespace std::chrono;
 
 
 namespace ML {
@@ -21,6 +24,8 @@ namespace ML {
 
         Array1D_fp32 outputData = getOutputData().getData<Array1D_fp32>();
 
+        auto start = high_resolution_clock::now();
+
         for(int i = 0; i < DEPTH; ++i) {
             for(int j = 0; j < HEIGHT; ++j) {
                 for(int k = 0; k < WIDTH; ++k) {
@@ -30,7 +35,10 @@ namespace ML {
                 }
             }
         }
-        printf("Flatten Finished\n\r");
+        auto end = high_resolution_clock::now();
+
+        auto total = duration_cast<microseconds>(end - start);
+        printf("Flatten Finished in %d us\n\r", total.count());
     }
 
 

@@ -5,7 +5,9 @@
 #include "Layer.h"
 #include "MaxPooling.h"
 #include <algorithm>
+#include <chrono>
 
+using namespace std::chrono;
 
 namespace ML {
     // --- Begin Student Code ---
@@ -21,6 +23,8 @@ namespace ML {
 
         Array3D_fp32 outputData = getOutputData().getData<Array3D_fp32>();
 
+        auto start = high_resolution_clock::now();
+
         for(int i = 0; i < X; i += 2) {
             for(int j = 0; j < Y; j += 2) {
                 for(int k = 0; k < Z; ++k) {
@@ -29,7 +33,10 @@ namespace ML {
                 }
             }
         }
-        printf("MaxPooling Finished\n\r");
+        auto end = high_resolution_clock::now();
+
+        auto total = duration_cast<microseconds>(end - start);
+        printf("MaxPooling Finished in %d us\n\r", total.count());
     }
 
 

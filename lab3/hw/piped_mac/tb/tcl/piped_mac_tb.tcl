@@ -64,6 +64,7 @@ add_force {/piped_mac/SD_AXIS_TDATA} -radix hex {0000000300000004 0ns}
 add_force {/piped_mac/SD_AXIS_TUSER} -radix hex {0 0ns}
 run 10ns
 add_force {/piped_mac/SD_AXIS_TVALID} -radix hex {0 0ns}
+add_force {/piped_mac/SD_AXIS_TLAST} -radix hex {0 0ns}
 run 50ns
 # Expected:
 #   0x0000_7D26
