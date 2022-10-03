@@ -57,6 +57,10 @@ namespace ML {
         Array3D_fp32 convInputData = dataIn.getData<Array3D_fp32>();
         Array3D_fp32 convOutputData = Output_data.getData<Array3D_fp32>();
 
+        Array3D_i8 convWeightData_q;
+        Array4D_ui8 convInputData_q;
+        Array1D_i32 convBiasData_q;
+
         //predeclair variables
         int n,m,p,q,c,r,s;
         int x,y,z,w;
@@ -87,6 +91,27 @@ namespace ML {
         uint8_t scale_weight = 127 / weights_max;
         int8_t scale_input = 255 / inputs_max;
         int32_t scale_biases = scale_input * scale_weight;
+
+        //Quantize inputs, weights, and biases with scales
+        for(x = 0; x < getWeightParams().dims[0]; x++) {
+            for(y = 0; y < getWeightParams().dims[1]; y++) {
+                for(z = 0; z < getWeightParams().dims[2]; z++) {
+                    for(w = 0; w < getWeightParams().dims[4]; w++) {
+                        convWeightData_q[x][y][z][w] = std::round(convWeightData[x][y][z][w] * scale_weight);
+                    }
+                }
+            }
+        }
+        for(x = 0; x < getWeightParams().dims[0]; x++) {
+            for(y = 0; y < getWeightParams().dims[1]; y++) {
+                for(z = 0; z < getWeightParams().dims[2]; z++) {
+                    convInputData_q[x][y][z] = std::round(convInputData[x][y][z] * scale_input);
+                }
+            }
+        }
+        for(x = 0; x < getBiasParams().dims[0]; x++) {
+            convBiasData_q[x] = std::round(convBiasData[x] * scale_biases);
+        }
 
 
         //Start time for profiling
