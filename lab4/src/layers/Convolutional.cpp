@@ -81,9 +81,9 @@ namespace ML {
                 }
             }
         }
-        for(x = 0; x < getWeightParams().dims[0]; x++) {
-            for(y = 0; y < getWeightParams().dims[1]; y++) {
-                for(z = 0; z < getWeightParams().dims[2]; z++) {
+        for(x = 0; x < getInputParams().dims[0]; x++) {
+            for(y = 0; y < getInputParams().dims[1]; y++) {
+                for(z = 0; z < getInputParams().dims[2]; z++) {
                     inputs_max = std::max(inputs_max, std::abs(convInputData[x][y][z]));
                 }
             }
@@ -103,9 +103,9 @@ namespace ML {
                 }
             }
         }
-        for(x = 0; x < getWeightParams().dims[0]; x++) {
-            for(y = 0; y < getWeightParams().dims[1]; y++) {
-                for(z = 0; z < getWeightParams().dims[2]; z++) {
+        for(x = 0; x < getInputParams().dims[0]; x++) {
+            for(y = 0; y < getInputParams().dims[1]; y++) {
+                for(z = 0; z < getInputParams().dims[2]; z++) {
                     convInputData_q[x][y][z] = std::round(convInputData[x][y][z] * scale_input);
                 }
             }
@@ -148,7 +148,18 @@ namespace ML {
         //printf("Convolution Finished\n\r");
         auto end = high_resolution_clock::now();
 
+        //De-quantize output values back to fp32
+        for(x = 0; x < getOutputParams().dims[0]; x++) {
+            for(y = 0; y < getOutputParams().dims[1]; y++) {
+                for(z = 0; z < getOutputParams().dims[2]; z++) {
+                    convOutputData[x][y][z] = convOutputData_q[x][y][z] / scale_biases;
+                }
+            }
+        }
 
+        if(debug) {
+            
+        }
 
         auto total = duration_cast<microseconds>(end - start);
         printf("Convolution Finished in %d us\n\r", total.count());
