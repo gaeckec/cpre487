@@ -58,8 +58,9 @@ namespace ML {
         Array3D_fp32 convOutputData = Output_data.getData<Array3D_fp32>();
 
         Array3D_i8 convWeightData_q;
-        Array4D_ui8 convInputData_q;
         Array1D_i32 convBiasData_q;
+        Array4D_ui8 convInputData_q;
+        Array3D_i32 convOutputData_q;
 
         //predeclair variables
         int n,m,p,q,c,r,s;
@@ -88,8 +89,8 @@ namespace ML {
             }
         }
 
-        uint8_t scale_weight = 127 / weights_max;
-        int8_t scale_input = 255 / inputs_max;
+        int8_t scale_weight = 127 / weights_max;
+        uint8_t scale_input = 255 / inputs_max;
         int32_t scale_biases = scale_input * scale_weight;
 
         //Quantize inputs, weights, and biases with scales
@@ -128,14 +129,14 @@ namespace ML {
                                     input_x = stide_size * q + s;
                                     input_y = stide_size * p + r;
 
-                                    convOutputData[q][p][m] += convInputData[input_x][input_y][c] * convWeightData[s][r][c][m];
+                                    convOutputData_q[q][p][m] += convInputData_q[input_x][input_y][c] * convWeightData_q[s][r][c][m];
                                 }
                             }
                         } 
-                        convOutputData[q][p][m] += convBiasData[m];
+                        convOutputData_q[q][p][m] += convBiasData_q[m];
 
-                        if(convOutputData[q][p][m] < 0){
-                            convOutputData[q][p][m] = 0.0f;
+                        if(convOutputData_q[q][p][m] < 0){
+                            convOutputData_q[q][p][m] = 0.0f;
                         }
                         // convOutputData[q][p][m] += convBiasData[m];
                     }
@@ -146,6 +147,8 @@ namespace ML {
         // printf("\nDim 0 = %d, Dim 1 = %d, Dim 2 = %d\n", output_height, output_width, num_filter_channels);
         //printf("Convolution Finished\n\r");
         auto end = high_resolution_clock::now();
+
+
 
         auto total = duration_cast<microseconds>(end - start);
         printf("Convolution Finished in %d us\n\r", total.count());
