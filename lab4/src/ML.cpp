@@ -36,6 +36,8 @@ Model buildToyModel(const fs::path modelPath) {
     ConvolutionalLayer* conv1 = new ConvolutionalLayer(conv1_inDataParam, conv1_outDataParam, conv1_weightParam, conv1_biasParam);
     model.addLayer(conv1);
 
+    /*
+
     // --- Conv 2: L1 ---
     // Input shape: 60x60x32
     // Output shape: 56x56x32
@@ -157,6 +159,7 @@ Model buildToyModel(const fs::path modelPath) {
 
     SoftMaxLayer* sm0 = new SoftMaxLayer(sm0_inDataParam, sm0_outDataParam);
     model.addLayer(sm0);
+    */
 
     return model;
 }
@@ -230,7 +233,7 @@ int main(int argc, char **argv) {
     std::cout << "\n--- Comparing The Output ---" << std::endl;
 
     // Construct a LayerData object from a LayerParams one
-    LayerData expected( { sizeof(fp32), {2048}, basePath / "image_1_data" / "layer_9_output.bin" } );
+    LayerData expected( { sizeof(fp32), {2048}, basePath / "image_1_data" / "layer_0_output.bin" } );
     expected.loadData<Array3D_fp32>();
 
     // std::cout << "Comparing expected output to model output (max error / T/F within epsilon " << EPSILON << "): \n\t"

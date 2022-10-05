@@ -5,7 +5,9 @@
 #include "Layer.h"
 #include "Dense.h"
 #include <chrono>
+#include <cmath>
 
+using namespace std;
 using namespace std::chrono;
 
 namespace ML {
@@ -25,7 +27,7 @@ namespace ML {
         //Preset LayerDate Tpye
         LayerData Weight_data = getWeightData();
         LayerData Bias_data = getBiasData();
-        // LayerData Output_data = getOutputData();
+        LayerData Output_data = getOutputData();
 
         //Map values to memory
         Array2D_fp32 denseWeightData = Weight_data.getData<Array2D_fp32>();
@@ -40,6 +42,7 @@ namespace ML {
 
         //predeclair variables
         int n,m,h;
+        int x,y,z,w;
 
         //Create Scales for quantization
         fp32 weights_max = denseWeightData[0][0]; 

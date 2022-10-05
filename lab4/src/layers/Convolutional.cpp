@@ -5,8 +5,10 @@
 #include "Layer.h"
 #include "Convolutional.h"
 #include <chrono>
+#include <cmath>
 
 using namespace std::chrono;
+using namespace std;
 
 namespace ML {
     // --- Begin Student Code ---
@@ -15,11 +17,11 @@ namespace ML {
     void ConvolutionalLayer::computeNaive(const LayerData &dataIn) const {
         // TODO: Your Code Here...
 
-        bool debug = false;
+        bool debug = true;
 
-        if (debug)
-            std::cout << "\n\n\n";
-
+        if (debug) {
+            //std::cout << "\n\n\n";
+        }
         // std::cout << getInputParams().dims[3];
 
         //Define Parameters
@@ -57,10 +59,10 @@ namespace ML {
         Array3D_fp32 convInputData = dataIn.getData<Array3D_fp32>();
         Array3D_fp32 convOutputData = Output_data.getData<Array3D_fp32>();
 
-        Array3D_i8 convWeightData_q;
-        Array1D_i32 convBiasData_q;
-        Array4D_ui8 convInputData_q;
-        Array3D_i32 convOutputData_q;
+        Array4D_i8 convWeightData_q[getWeightParams().dims[0]][getWeightParams().dims[1]][getWeightParams().dims[2]][getWeightParams().dims[3]];
+        Array1D_i32 convBiasData_q[getBiasParams().dims[0]];
+        Array3D_ui8 convInputData_q[getInputParams().dims[0]][getInputParams().dims[1]][getInputParams().dims[2]];
+        Array3D_i32 convOutputData_q[output_width][output_height][num_filter_channels];
 
         //predeclair variables
         int n,m,p,q,c,r,s;
@@ -75,7 +77,7 @@ namespace ML {
         for(x = 0; x < getWeightParams().dims[0]; x++) {
             for(y = 0; y < getWeightParams().dims[1]; y++) {
                 for(z = 0; z < getWeightParams().dims[2]; z++) {
-                    for(w = 0; w < getWeightParams().dims[4]; w++) {
+                    for(w = 0; w < getWeightParams().dims[3]; w++) {
                         weights_max = std::max(weights_max, std::abs(convWeightData[x][y][z][w]));
                     }
                 }
@@ -89,20 +91,35 @@ namespace ML {
             }
         }
 
-        int8_t scale_weight = 127 / weights_max;
-        uint8_t scale_input = 255 / inputs_max;
-        int32_t scale_biases = scale_input * scale_weight;
+        if(debug) {
+            printf("Input Max Val: %lf\n\rWeight Max Val: %lf\n\r", inputs_max, weights_max);
+        }
+
+        i8 scale_weight = 127 / weights_max;
+        ui8 scale_input = 255 / inputs_max;
+        i32 scale_biases = scale_input * scale_weight;
 
         //Quantize inputs, weights, and biases with scales
+        printf("Starting Quantization...\n\r");
         for(x = 0; x < getWeightParams().dims[0]; x++) {
             for(y = 0; y < getWeightParams().dims[1]; y++) {
                 for(z = 0; z < getWeightParams().dims[2]; z++) {
-                    for(w = 0; w < getWeightParams().dims[4]; w++) {
-                        convWeightData_q[x][y][z][w] = std::round(convWeightData[x][y][z][w] * scale_weight);
+                    for(w = 0; w < getWeightParams().dims[3]; w++) {
+                        //[x][y][z][w]
+                        //[w][z][y][x]
+
+
+                        printf("X=%d.Y=%d,Z=%d,W=%d\n",x,y,z,w);
+                        fp32 dummy = convWeightData[x][y][z][w];
+                        i8 thick = std::round(dummy * scale_weight);
+                        convWeightData_q[x][y][z][w] = thick;
                     }
                 }
             }
         }
+
+        printf("got here\n\r");
+/*
         for(x = 0; x < getInputParams().dims[0]; x++) {
             for(y = 0; y < getInputParams().dims[1]; y++) {
                 for(z = 0; z < getInputParams().dims[2]; z++) {
@@ -157,12 +174,11 @@ namespace ML {
             }
         }
 
-        if(debug) {
-            
-        }
+        
 
         auto total = duration_cast<microseconds>(end - start);
         printf("Convolution Finished in %d us\n\r", total.count());
+*/
     }
 
 
