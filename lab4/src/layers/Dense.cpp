@@ -36,17 +36,23 @@ namespace ML {
         Array1D_fp32 denseInputData = dataIn.getData<Array1D_fp32>();
         Array1D_fp32 denseOutputData = Output_data.getData<Array1D_fp32>();
 
-        Array2D_i8 denseWeightData_q = Weight_data.getData<Array2D_i8>();
-        Array1D_i32 denseBiasData_q = Bias_data.getData<Array1D_i32>();
-        Array1D_ui8 denseInputData_q = dataIn.getData<Array1D_ui8>();
-        Array1D_i32 denseOutputData_q = Output_data.getData<Array1D_i32>();
+        Array2D_i8 denseWeightData_q = getWeightData_q.getData<Array2D_i8>();
+        Array1D_i32 denseBiasData_q = getBiasData_q.getData<Array1D_i32>();
+        Array1D_ui8 denseInputData_q = getInputData_q.getData<Array1D_ui8>();
+        Array1D_i32 denseOutputData_q = getOutputData_q.getData<Array1D_i32>();
 
         //predeclair variables
         int n,m,h;
         int x,y,z,w;
 
-        fp32 weights_max = getWeightsMax();
-        fp32 inputs_max = getInputsMax();
+        fp32 weights_max = 0;
+        fp32 inputs_max = 0;
+
+        if(isQuantized()) {
+            weights_max = getWeightsMax();
+            inputs_max = getInputsMax();
+            //printf("Weight Max Val: %lf\n\rInput Max Val: %lf\n\r", weights_max, inputs_max);
+        }
 
         if(debug){
             fp32 weights_max = denseWeightData[0][0];

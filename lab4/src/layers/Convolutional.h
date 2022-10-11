@@ -8,11 +8,11 @@ namespace ML {
     class ConvolutionalLayer : public Layer {
         public:
             ConvolutionalLayer(const LayerParams inParams, const LayerParams outParams,
-                               const LayerParams weightParams, const LayerParams biasParams, const fp32 weights_max, const fp32 inputs_max, const bool quantize)
+                               const LayerParams weightParams, const LayerParams biasParams, const fp32 weights_max, const fp32 inputs_max, const bool quantize, const int quant_length)
                 : Layer(inParams, outParams, LayerType::CONVOLUTIONAL), weightParam(weightParams), weightData(weightParams),
                   biasParam(biasParams), biasData(biasParams), 
                   weightData_q(weightParams), biasData_q(biasParams), inputData_q(inParams), outputData_q(outParams),
-                  weights_max(weights_max), inputs_max(inputs_max), quantize(quantize) {}
+                  weights_max(weights_max), inputs_max(inputs_max), quantize(quantize), quant_length(quant_length) {}
 
             // Getters
             const LayerParams& getWeightParams() const { return weightParam; }
@@ -26,6 +26,7 @@ namespace ML {
             const fp32& getWeightsMax() const { return weights_max; }
             const fp32& getInputsMax() const { return inputs_max; }
             const bool& isQuantized() const { return quantize; }
+            const int& getQuantLength() const { return quant_length; }
 
             // Allocate all resources needed for the layer & Load all of the required data for the layer
             template<typename T>
@@ -77,6 +78,7 @@ namespace ML {
             fp32 weights_max;
             fp32 inputs_max;
             bool quantize;
+            int quant_length;
     };
 
 }

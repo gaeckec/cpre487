@@ -36,7 +36,7 @@ Model buildToyModel(const fs::path modelPath) {
 
     ConvolutionalLayer* conv1 = new ConvolutionalLayer(conv1_inDataParam, conv1_outDataParam, conv1_weightParam, conv1_biasParam, 0.302879, 1.0, quantize);
     model.addLayer(conv1);
-
+/*
     // --- Conv 2: L1 ---
     // Input shape: 60x60x32
     // Output shape: 56x56x32
@@ -47,7 +47,6 @@ Model buildToyModel(const fs::path modelPath) {
 
     ConvolutionalLayer* conv2 = new ConvolutionalLayer(conv2_inDataParam, conv2_outDataParam, conv2_weightParam, conv2_biasParam, 0.486778, 0.655856, quantize);
     model.addLayer(conv2);
-/*
     // --- MPL 0: L2 ---
     // Input shape: 56x56x32
     // Output shape: 28x28x32

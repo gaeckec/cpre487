@@ -66,11 +66,14 @@ namespace ML {
 
         fp32 weights_max = 0;
         fp32 inputs_max = 0;
+        int quant_length = 8;
 
         if(isQuantized()) {
             weights_max = getWeightsMax();
             inputs_max = getInputsMax();
-            //printf("Weight Max Val: %lf\n\rInput Max Val: %lf\n\r", weights_max, inputs_max);
+            printf("Weight Max Val: %lf\n\rInput Max Val: %lf\n\r", weights_max, inputs_max);
+
+            
         }
 
         if(debug){
@@ -97,8 +100,8 @@ namespace ML {
         }
 
         //Create Scales for quantization
-        i8 scale_weight = 127 / weights_max;
-        ui8 scale_input = 255 / inputs_max;
+        i8 scale_weight = std:pow(2,quant_length-1)-1 / weights_max;
+        ui8 scale_input = std:pow(2,quant_length)-1 / inputs_max;
         i32 scale_biases = scale_input * scale_weight;
         //printf("scale_weight: %d\n\rscale_input: %d\n\rscale_biases: %d\n\r", scale_weight, scale_input, scale_biases);
 
@@ -187,14 +190,14 @@ namespace ML {
                                         input_x = stide_size * q + s;
                                         input_y = stide_size * p + r;
 
-                                        convOutputData_2[q][p][m] += convInputData[input_x][input_y][c] * convWeightData[s][r][c][m];
+                                        convOutputData[q][p][m] += convInputData[input_x][input_y][c] * convWeightData[s][r][c][m];
                                     }
                                 }
                             } 
-                            convOutputData_2[q][p][m] += convBiasData[m];
+                            convOutputData[q][p][m] += convBiasData[m];
 
-                            if(convOutputData_2[q][p][m] < 0){
-                                convOutputData_2[q][p][m] = 0.0f;
+                            if(convOutputData[q][p][m] < 0){
+                                convOutputData[q][p][m] = 0.0f;
                             }
                         }
                     } 
