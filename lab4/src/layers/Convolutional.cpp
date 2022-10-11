@@ -6,6 +6,7 @@
 #include "Convolutional.h"
 #include <chrono>
 #include <cmath>
+#include <algorithm>
 
 using namespace std::chrono;
 using namespace std;
@@ -18,9 +19,16 @@ namespace ML {
         // TODO: Your Code Here...
 
         bool debug = false;
+        int quant_length = getQuantLength();
+        i8 clamp_low = -1*(std::pow(2,quant_length-1)-1);
+        i8 clamp_high = std::pow(2,quant_length-1)-1;  
+        ui8 u_clamp_low = 0;
+        ui8 u_clamp_high = std::pow(2,quant_length)-1;  
+
 
         if (debug) {
-            //std::cout << "\n\n\n";
+            printf("clamp_low = %d, clamp high = %d\nunsigned_clamp_low = %d, unsigned_clamp high = %d\n",
+                    clamp_low,clamp_high,u_clamp_low, u_clamp_high);
         }
         // std::cout << getInputParams().dims[3];
 
@@ -55,7 +63,7 @@ namespace ML {
         Array3D_fp32 convInputData = dataIn.getData<Array3D_fp32>();
         Array3D_fp32 convOutputData = Output_data.getData<Array3D_fp32>();
         fp32 convOutputData_2[output_height][output_width][num_filter_channels];
-
+            
         Array4D_i8 convWeightData_q = getWeightData_q().getData<Array4D_i8>();
         Array1D_i32 convBiasData_q = getBiasData_q().getData<Array1D_i32>();
         Array3D_ui8 convInputData_q = getInputData_q().getData<Array3D_ui8>();
@@ -66,14 +74,12 @@ namespace ML {
 
         fp32 weights_max = 0;
         fp32 inputs_max = 0;
-        int quant_length = 8;
+        
 
         if(isQuantized()) {
             weights_max = getWeightsMax();
             inputs_max = getInputsMax();
-            printf("Weight Max Val: %lf\n\rInput Max Val: %lf\n\r", weights_max, inputs_max);
-
-            
+            //printf("Weight Max Val: %lf\n\rInput Max Val: %lf\n\r", weights_max, inputs_max);
         }
 
         if(debug){
@@ -100,8 +106,8 @@ namespace ML {
         }
 
         //Create Scales for quantization
-        i8 scale_weight = std:pow(2,quant_length-1)-1 / weights_max;
-        ui8 scale_input = std:pow(2,quant_length)-1 / inputs_max;
+        i8 scale_weight = std::pow(2,quant_length-1)-1 / weights_max;
+        ui8 scale_input = std::pow(2,quant_length)-1 / inputs_max;
         i32 scale_biases = scale_input * scale_weight;
         //printf("scale_weight: %d\n\rscale_input: %d\n\rscale_biases: %d\n\r", scale_weight, scale_input, scale_biases);
 
@@ -113,7 +119,7 @@ namespace ML {
                 for(y = 0; y < getWeightParams().dims[1]; y++) {
                     for(z = 0; z < getWeightParams().dims[2]; z++) {
                         for(w = 0; w < getWeightParams().dims[3]; w++) {
-                            convWeightData_q[x][y][z][w] = std::round(convWeightData[x][y][z][w] * scale_weight);
+                            convWeightData_q[x][y][z][w] = std::clamp(static_cast<i8>(std::round(convWeightData[x][y][z][w] * scale_weight)), clamp_low,clamp_high);
                             //printf("convWeightData_q: %d\n\r", convWeightData_q[x][y][z][w]);
                         }
                     }
@@ -123,13 +129,13 @@ namespace ML {
             for(x = 0; x < getInputParams().dims[0]; x++) {
                 for(y = 0; y < getInputParams().dims[1]; y++) {
                     for(z = 0; z < getInputParams().dims[2]; z++) {
-                        convInputData_q[x][y][z] = std::round(convInputData[x][y][z] * scale_input);
+                        convInputData_q[x][y][z] = std::clamp(static_cast<ui8>(std::round(convInputData[x][y][z] * scale_input)),u_clamp_low,u_clamp_high);
                         //printf("convInputData_q: %d\n\r", convInputData_q[x][y][z]);
                     }
                 }
             }
             for(x = 0; x < getBiasParams().dims[0]; x++) {
-                convBiasData_q[x] = std::round(convBiasData[x] * scale_biases);
+                convBiasData_q[x] = static_cast<i32>(std::round(convBiasData[x] * scale_biases));
             }
 
             //Start time for profiling
@@ -190,14 +196,14 @@ namespace ML {
                                         input_x = stide_size * q + s;
                                         input_y = stide_size * p + r;
 
-                                        convOutputData[q][p][m] += convInputData[input_x][input_y][c] * convWeightData[s][r][c][m];
+                                        convOutputData_2[q][p][m] += convInputData[input_x][input_y][c] * convWeightData[s][r][c][m];
                                     }
                                 }
                             } 
-                            convOutputData[q][p][m] += convBiasData[m];
+                            convOutputData_2[q][p][m] += convBiasData[m];
 
-                            if(convOutputData[q][p][m] < 0){
-                                convOutputData[q][p][m] = 0.0f;
+                            if(convOutputData_2[q][p][m] < 0){
+                                convOutputData_2[q][p][m] = 0.0f;
                             }
                         }
                     } 
@@ -211,10 +217,17 @@ namespace ML {
             printf("Convolution Finished in %d us\n\r", total.count());
         }
 
-        // for(x = 0; x < 40; ++x) {
-        //     printf("DE Quantized Value: %lf, Original Value: %lf\n\r", convOutputData[0][x][x], convOutputData_2[0][x][x]);
-        //     //printf("DE Quantized Value: %lf\n\r", convOutputData[0][x][x]);
+        // fp32 err = 0;
+        // for(x = 0; x < output_height; ++x) {
+        //     for(y = 0; y < output_width; ++y) {
+        //         for(z = 0; z < num_filter_channels; ++z) {
+        //             err += (convOutputData[x][y][z] - convOutputData_2[x][y][z]);
+        //         }
+        //     }
+        //     //printf("DE Quantized Value: %lf, Original Value: %lf\n\r", convOutputData[0][x][x], convOutputData_2[0][x][x]);
+        //     // //printf("DE Quantized Value: %lf\n\r", convOutputData[0][x][x]);
         // }
+        // printf("err: %lf\n\r", err);
     }
 
 

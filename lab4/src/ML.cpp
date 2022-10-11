@@ -34,9 +34,9 @@ Model buildToyModel(const fs::path modelPath) {
     LayerParams conv1_weightParam(sizeof(fp32), {5, 5, 3, 32}, modelPath / "conv1_weights.bin");
     LayerParams conv1_biasParam(sizeof(fp32), {32}, modelPath / "conv1_biases.bin");
 
-    ConvolutionalLayer* conv1 = new ConvolutionalLayer(conv1_inDataParam, conv1_outDataParam, conv1_weightParam, conv1_biasParam, 0.302879, 1.0, quantize);
+    ConvolutionalLayer* conv1 = new ConvolutionalLayer(conv1_inDataParam, conv1_outDataParam, conv1_weightParam, conv1_biasParam, 0.302879, 1.0, quantize, 2);
     model.addLayer(conv1);
-/*
+
     // --- Conv 2: L1 ---
     // Input shape: 60x60x32
     // Output shape: 56x56x32
@@ -45,7 +45,7 @@ Model buildToyModel(const fs::path modelPath) {
     LayerParams conv2_weightParam(sizeof(fp32), {5, 5, 32, 32}, modelPath / "conv2_weights.bin");
     LayerParams conv2_biasParam(sizeof(fp32), {32}, modelPath / "conv2_biases.bin");
 
-    ConvolutionalLayer* conv2 = new ConvolutionalLayer(conv2_inDataParam, conv2_outDataParam, conv2_weightParam, conv2_biasParam, 0.486778, 0.655856, quantize);
+    ConvolutionalLayer* conv2 = new ConvolutionalLayer(conv2_inDataParam, conv2_outDataParam, conv2_weightParam, conv2_biasParam, 0.486778, 0.655856, quantize, 2);
     model.addLayer(conv2);
     // --- MPL 0: L2 ---
     // Input shape: 56x56x32
@@ -64,7 +64,7 @@ Model buildToyModel(const fs::path modelPath) {
     LayerParams conv3_weightParam(sizeof(fp32), {3, 3, 32, 64}, modelPath / "conv3_weights.bin");
     LayerParams conv3_biasParam(sizeof(fp32), {64}, modelPath / "conv3_biases.bin");
 
-    ConvolutionalLayer* conv3 = new ConvolutionalLayer(conv3_inDataParam, conv3_outDataParam, conv3_weightParam, conv3_biasParam, 0.692378, 1.077297, quantize);
+    ConvolutionalLayer* conv3 = new ConvolutionalLayer(conv3_inDataParam, conv3_outDataParam, conv3_weightParam, conv3_biasParam, 0.692378, 1.077297, quantize, 2);
     model.addLayer(conv3);
 
     // --- Conv 4: L4 ---
@@ -75,7 +75,7 @@ Model buildToyModel(const fs::path modelPath) {
     LayerParams conv4_weightParam(sizeof(fp32), {3, 3, 64, 64}, modelPath / "conv4_weights.bin");
     LayerParams conv4_biasParam(sizeof(fp32), {64}, modelPath / "conv4_biases.bin");
 
-    ConvolutionalLayer* conv4 = new ConvolutionalLayer(conv4_inDataParam, conv4_outDataParam, conv4_weightParam, conv4_biasParam, 0.541547, 0.685397, quantize);
+    ConvolutionalLayer* conv4 = new ConvolutionalLayer(conv4_inDataParam, conv4_outDataParam, conv4_weightParam, conv4_biasParam, 0.541547, 0.685397, quantize, 2);
     model.addLayer(conv4);
 
     // --- MPL 1: L5---
@@ -95,7 +95,7 @@ Model buildToyModel(const fs::path modelPath) {
     LayerParams conv5_weightParam(sizeof(fp32), {3, 3, 64, 64}, modelPath / "conv5_weights.bin");
     LayerParams conv5_biasParam(sizeof(fp32), {64}, modelPath / "conv5_biases.bin");
 
-    ConvolutionalLayer* conv5 = new ConvolutionalLayer(conv5_inDataParam, conv5_outDataParam, conv5_weightParam, conv5_biasParam, 0.536679, 0.752693, quantize);
+    ConvolutionalLayer* conv5 = new ConvolutionalLayer(conv5_inDataParam, conv5_outDataParam, conv5_weightParam, conv5_biasParam, 0.536679, 0.752693, quantize, 2);
     model.addLayer(conv5);
 
     // --- Conv 6: L7 ---
@@ -106,7 +106,7 @@ Model buildToyModel(const fs::path modelPath) {
     LayerParams conv6_weightParam(sizeof(fp32), {3, 3, 64, 128}, modelPath / "conv6_weights.bin");
     LayerParams conv6_biasParam(sizeof(fp32), {128}, modelPath / "conv6_biases.bin");
 
-    ConvolutionalLayer* conv6 = new ConvolutionalLayer(conv6_inDataParam, conv6_outDataParam, conv6_weightParam, conv6_biasParam, 0.510655, 1.129222, quantize);
+    ConvolutionalLayer* conv6 = new ConvolutionalLayer(conv6_inDataParam, conv6_outDataParam, conv6_weightParam, conv6_biasParam, 0.510655, 1.129222, quantize, 2);
     model.addLayer(conv6);
 
     // --- MPL 2: L8 ---
@@ -157,7 +157,7 @@ Model buildToyModel(const fs::path modelPath) {
 
     SoftMaxLayer* sm0 = new SoftMaxLayer(sm0_inDataParam, sm0_outDataParam);
     model.addLayer(sm0);
-    */
+    
 
     return model;
 }

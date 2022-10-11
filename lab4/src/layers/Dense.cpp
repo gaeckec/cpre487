@@ -36,10 +36,10 @@ namespace ML {
         Array1D_fp32 denseInputData = dataIn.getData<Array1D_fp32>();
         Array1D_fp32 denseOutputData = Output_data.getData<Array1D_fp32>();
 
-        Array2D_i8 denseWeightData_q = getWeightData_q.getData<Array2D_i8>();
-        Array1D_i32 denseBiasData_q = getBiasData_q.getData<Array1D_i32>();
-        Array1D_ui8 denseInputData_q = getInputData_q.getData<Array1D_ui8>();
-        Array1D_i32 denseOutputData_q = getOutputData_q.getData<Array1D_i32>();
+        Array2D_i8 denseWeightData_q = getWeightData_q().getData<Array2D_i8>();
+        Array1D_i32 denseBiasData_q = getBiasData_q().getData<Array1D_i32>();
+        Array1D_ui8 denseInputData_q = getInputData_q().getData<Array1D_ui8>();
+        Array1D_i32 denseOutputData_q = getOutputData_q().getData<Array1D_i32>();
 
         //predeclair variables
         int n,m,h;
@@ -98,8 +98,6 @@ namespace ML {
                         denseOutputData_q[m] += denseInputData_q[h] * denseWeightData_q[h][m];                                
                     }
                     denseOutputData_q[m] += denseBiasData_q[m];
-
-                    if(denseOutputData_q[m] < 0) { denseOutputData_q[m] = 0.0; }
                 } 
             }
 
@@ -112,7 +110,8 @@ namespace ML {
 
             //De-quantize output values back to fp32
             for(x = 0; x < getOutputParams().dims[0]; x++) {
-                denseOutputData[x] = denseOutputData_q[x] / scale_biases;
+                denseOutputData[x] = denseOutputData_q[x] / static_cast<fp32>(scale_biases);
+                if(denseOutputData[m] < 0) { denseOutputData[m] = 0.0; }
             }
         } else {
             //Start time for profiling
