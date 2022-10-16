@@ -62,17 +62,15 @@ architecture behavioral of piped_mac is
     constant fixed_t_zero : fixed_t := (others => '0');
     constant fixed_t_wide_zero : fixed_t_wide := (others => '0');
     
---    signal input_0       : fixed_t := fixed_t_zero;
---    signal input_1       : fixed_t := fixed_t_zero;
+    signal input_0       : fixed_t := fixed_t_zero;
+    signal input_1       : fixed_t := fixed_t_zero;
     signal mult_bits     : fixed_t_wide := fixed_t_wide_zero;
     signal sum_bits      : fixed_t_wide_check := (others => '0');
     
-    signal t_last_0, t_last_1  : std_logic;
-	signal prev_TID_0, prev_TID_1  : std_logic_vector(7 downto 0);
-	signal double_op, first_out : std_logic;
-	
+    signal t_last_wait, t_last_add, t_last_out  : std_logic;
+    	
 	-- Mac stages
-    type PIPE_STAGES is (WAIT_FOR_VALUES, ADD, OUT_1, OUT_2);
+    type PIPE_STAGES is (WAIT_FOR_VALUES, ADD, OUT_1);
 
 	
 	-- Debug signals, make sure we aren't going crazy
@@ -84,7 +82,8 @@ begin
 
     -- Internal signal
     --t_last_0 <= SD_AXIS_TLAST;
-
+   
+   SD_AXIS_TREADY <= '1';
     
 	-- Debug Signals
    mac_debug <= x"00000002";  -- Double checking sanity
@@ -95,14 +94,17 @@ begin
 
       -- Reset values if reset is low
       if ARESETN = '0' then  -- Reset
+--        input_0 <= (others => '0');
+--        input_1 <= (others => '0');
         mult_bits <= (others => '0');
         sum_bits  <= (others => '0');
         
-        t_last_0 <= '0';
-        t_last_1 <= '0';
+        t_last_wait <= '0';
+        t_last_add <= '0';
+        t_last_out <= '0';
         
-        prev_TID_0 <= (others => '0');
-        prev_TID_1 <= (others => '0');
+--        prev_TID_0 <= (others => '0');
+--        prev_TID_1 <= (others => '0');
         
         double_op <= '0';
         first_out <= '0';
@@ -114,91 +116,56 @@ begin
                 when WAIT_FOR_VALUES =>
                     if SD_AXIS_TVALID = '1' then
                         if SD_AXIS_TUSER = '1' then
-                            mult_bits <= signed(resize(signed(SD_AXIS_TDATA(C_DATA_WIDTH-1 downto 0)), mult_bits'length));
+                            sum_bits <= signed(resize(signed(SD_AXIS_TDATA(C_DATA_WIDTH-1 downto 0)), sum_bits'length));
                         else
+                            --input_0 <= signed(SD_AXIS_TDATA(C_DATA_WIDTH-1 downto 0));
+                            --input_1 <= signed(SD_AXIS_TDATA(C_DATA_WIDTH*2-1 downto C_DATA_WIDTH));
                             mult_bits <= signed(SD_AXIS_TDATA(C_DATA_WIDTH-1 downto 0)) * signed(SD_AXIS_TDATA(C_DATA_WIDTH*2-1 downto C_DATA_WIDTH));
                         end if;
                         
-                        t_last_0  <= SD_AXIS_TLAST;
-                        t_last_1  <= '0';
-                        prev_TID_0 <= SD_AXIS_TID; 
+                        --t_last_1  <= '0';
+                        --prev_TID_0 <= SD_AXIS_TID; 
                     
                     end if;
+                    
+                    t_last_wait  <= SD_AXIS_TLAST;
                     
                 when ADD =>
                     -- Accumulate until last value in stream
-                    if t_last_1 = '0' then
+                    if t_last_add = '1' and t_last_wait = '1' then
+                        sum_bits <= mult_bits(C_DATA_WIDTH-1) & mult_bits;
+                    else
                         sum_bits <= sum_bits + mult_bits;
-                        t_last_1 <= t_last_0;
-                        t_last_0 <= SD_AXIS_TLAST;
-                        prev_TID_1 <= prev_TID_0;
-                                            
-                    end if;               
+                    end if; 
                     
-                    if SD_AXIS_TLAST = '1' and t_last_0 = '1' and (SD_AXIS_TID /= prev_TID_0) then
-                        double_op <= '1';
-                    
-                    end if;            
+                    t_last_add <= t_last_wait;
+                                                    
                                                         
                 when OUT_1 =>
-                    if t_last_1 = '1' then
-                        first_out <= '1';
-                            
-                        -- Logic for truncation of summation
-                        if(sum_bits(2*C_DATA_WIDTH downto INTEGER_BITS+FIXED_BITS+FIXED_BITS) > 0) then
-                            MO_AXIS_TDATA(C_DATA_WIDTH-1) <= '0';
-                            MO_AXIS_TDATA(C_DATA_WIDTH-2 downto 0) <= (others => '1');
-                            
-                        elsif(sum_bits(2*C_DATA_WIDTH downto INTEGER_BITS+FIXED_BITS+FIXED_BITS) < -1) then
-                            MO_AXIS_TDATA(C_DATA_WIDTH-1) <= '1';
-                            MO_AXIS_TDATA(C_DATA_WIDTH-2 downto 0) <= (others => '0');
-                            
-                        else 
-                            MO_AXIS_TDATA <= std_logic_vector(sum_bits(INTEGER_BITS+FIXED_BITS+FIXED_BITS-1 downto FIXED_BITS));
-                        
-                        end if;
+                    if t_last_add = '1' then
                         
                         -- AXI Bus handshake
                         MO_AXIS_TVALID <= '1';
-                        if MO_AXIS_TREADY = '1' then
-                            MO_AXIS_TDATA <= std_logic_vector(sum_bits(C_DATA_WIDTH-1 downto 0));
+                         if MO_AXIS_TREADY = '1' then
+                                -- Logic for truncation of summation
+                            if(sum_bits(2*C_DATA_WIDTH downto INTEGER_BITS+FIXED_BITS+FIXED_BITS) > 0) then
+                                MO_AXIS_TDATA(C_DATA_WIDTH-1) <= '0';
+                                MO_AXIS_TDATA(C_DATA_WIDTH-2 downto 0) <= (others => '1');
+                                
+                            elsif(sum_bits(2*C_DATA_WIDTH downto INTEGER_BITS+FIXED_BITS+FIXED_BITS) < -1) then
+                                MO_AXIS_TDATA(C_DATA_WIDTH-1) <= '1';
+                                MO_AXIS_TDATA(C_DATA_WIDTH-2 downto 0) <= (others => '0');
+                                
+                            else 
+                                MO_AXIS_TDATA <= std_logic_vector(sum_bits(INTEGER_BITS+FIXED_BITS+FIXED_BITS-1 downto FIXED_BITS));
+                            
+                            end if;
+                            
                             MO_AXIS_TVALID <= '0';
-                            MO_AXIS_TLAST <= t_last_1;
-                            MO_AXIS_TID <= prev_TID_1;
-                            t_last_0 <= '0';
+                            MO_AXIS_TLAST <= t_last_add;
                             
                         end if;
                     end if;
-            
-                when OUT_2 =>
-                    if double_op = '1' and first_out = '1' then
-                        double_op <= '0';
-                        first_out <= '0';
-                    
-                        if(mult_bits(2*C_DATA_WIDTH-1 downto INTEGER_BITS+FIXED_BITS+FIXED_BITS) > 0) then
-                            MO_AXIS_TDATA(C_DATA_WIDTH-1) <= '0';
-                            MO_AXIS_TDATA(C_DATA_WIDTH-2 downto 0) <= (others => '1');
-                            
-                        elsif(mult_bits(2*C_DATA_WIDTH-1 downto INTEGER_BITS+FIXED_BITS+FIXED_BITS) < -1) then
-                            MO_AXIS_TDATA(C_DATA_WIDTH-1) <= '1';
-                            MO_AXIS_TDATA(C_DATA_WIDTH-2 downto 0) <= (others => '0');
-                            
-                        else 
-                            MO_AXIS_TDATA <= std_logic_vector(mult_bits(INTEGER_BITS+FIXED_BITS+FIXED_BITS-1 downto FIXED_BITS));
-                        
-                        end if;
-                        
-                        -- AXI Bus handshake
-                        MO_AXIS_TVALID <= '1';
-                        if MO_AXIS_TREADY = '1' then
-                            MO_AXIS_TDATA <= std_logic_vector(mult_bits(C_DATA_WIDTH-1 downto 0));
-                            MO_AXIS_TVALID <= '0';
-                            MO_AXIS_TLAST <= t_last_1;
-                            MO_AXIS_TID <= prev_TID_0;
-                            t_last_1 <= '0';
-                            
-                        end if;                
-                    end if; 
 
             end case;  -- Stages
 		end loop;  -- Stages
