@@ -235,8 +235,8 @@ namespace ML {
     void ConvolutionalLayer::computeTiled(const LayerData &dataIn) const {
         // TODO: Your Code Here...
         std::cout << "\nhello Convolution Tiled\n";
-        int block_size = 8;
-        bool tiled = false;
+        int block_size = 4;
+        bool tiled = true;
 
         //Define Parameters
         int input_height = getInputParams().dims[0];
@@ -279,15 +279,11 @@ namespace ML {
                 for(p = 0; p < output_height; p++){
                     for(q = 0; q < output_width; q++){
                         for(m = 0; m < num_filter_channels; m++) {
-                            // std::cout << "\n" << p << q << m << "\n";
                             for(r = 0; r < filter_height; r++){
                                 input_x = stride_size * p + r;
-
                                 for(s = 0; s < filter_width; s++) { 
                                     input_y = stride_size * q + s;  
-
                                     for(c = 0; c < num_input_channels; c++) {
-                                        // std::cout << input_x << input_y << c << "\n";
                                         convOutputData[p][q][m] += convInputData[input_x][input_y][c] * convWeightData[s][r][c][m];
                                     }
                                 }
@@ -306,7 +302,6 @@ namespace ML {
                         for(pp = p; pp < p+block_size && pp < output_height; pp++) {
                             for(qq = q; qq < q+block_size && qq < output_width; qq++) {
                                 for(m = 0; m < num_filter_channels; m++) {
-                                    // std::cout << "\n" << pp << " " << qq << " " << m << "\n";
                                     for(r = 0; r < filter_height; r++) {
                                         input_x = stride_size * pp + r;
 
